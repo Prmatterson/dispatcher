@@ -54,24 +54,24 @@
                 ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
                 fugiat n</p><br>
             <form action="">
-                <label for="work-order">Work Order:</label><br>
+                <label for="work-order">Work Order Number:</label><br>
                 <input type="text" id="work-order" name="work-order" value=""><br>
-                <label for="tech">Technician:</label><br>
+                <label for="tech">Technician Number:</label><br>
                 <input type="text" id="tech" name="tech" value=""><br>
-                <label for="start-time">Start Time (24H format e.g. 1800 for 6:00pm):</label><br>
+                <label for="start-time">Start Time (24-hour format, e.g. 1800 for 6:00pm):</label><br>
                 <input type="text" id="start-time" name="start-time" value=""><br>
-                <label for="duration">Duration (in tenths of an hour):</label><br>
+                <label for="duration">Duration (in tenths of an hour, e.g. 1.1 for 1 hour and 6 minutes):</label><br>
                 <input type="text" id="duration" name="duration" value=""><br><br>
                 <input type="submit" value="Submit">
             </form><br><br>
             <table id="table">
                 <script>
                     // (B)  ARRAY
-                    var data = ["Time", "Tech 1", "Tech 2", "Tech 3", 8.0, "", "", "", 8.1, "", "", "", 8.2, "", "", "", 8.3, "", "", ""];
+                    let data = ["Time", "Tech 1", "Tech 2", "Tech 3", 8.0, "", "", "", 8.1, "", "", "", 8.2, "", "", "", 8.3, "", "", ""];
 
                     // (C) CREATE HTML TABLE
                     // (C1) HTML TABLE ELEMENT
-                    var myTable = document.createElement("table"),
+                    let myTable = document.createElement("table"),
                         row = myTable.insertRow(), cell;
 
                     // (C2) LOOP THROUGH ARRAY & GENERATE ROWS-CELLS
@@ -84,8 +84,6 @@
                         // CLICK ON CELL TO DO SOMETHING
                         // cell.onclick = FUNCTION;
 
-                        // TO PASS IN A RUNNING NUMBER OR PARAMETER
-                        // cell.onclick = () => { console.log(i); };
 
                         // BREAK INTO NEXT ROW
                         let next = i + 1;
@@ -94,6 +92,7 @@
 
                     // (D) ATTACH TABLE TO CONTAINER
                     document.getElementById("table").appendChild(myTable);
+
                     </script>
             </table >
 
