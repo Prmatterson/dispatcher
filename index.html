@@ -11,11 +11,12 @@
     <title>Dispatcher</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="index.css">
 </head>
 
-<body>
+<body class="container">
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]
@@ -66,42 +67,21 @@
                 <input type="submit" value="Submit">
             </form><br><br>
 
-            <table id="table">
-                <script>
-                    // (B)  ARRAY
-                    let data = ["Time", "Tech 1", "Tech 2", "Tech 3", 8.0, "", "", "", 8.1, "", "", "", 8.2, "", "", "", 8.3, "", "", ""];
+            <div id="job-table">
+
+            </div>
+            <br><br>
+            <div id="evens-odds">
 
 
-                    // (C) CREATE HTML TABLE
-                    // (C1) HTML TABLE ELEMENT
-                    let myTable = document.createElement("table"),
-                        row = myTable.insertRow(), cell;
+            </div>
+            <br><br>
+            <div id="test-table">
 
-                    // (C2) LOOP THROUGH ARRAY & GENERATE ROWS-CELLS
-                    let perrow = 4; // 4 CELLS PER ROW
-                    data.forEach((value, i) => {
-                        // ADD CELL
-                        cell = row.insertCell();
-                        cell.innerHTML = value;
+            </div>
+        </div>
 
-                        // CLICK ON CELL TO DO SOMETHING
-                        // cell.onclick = FUNCTION;
-
-
-                        // BREAK INTO NEXT ROW
-                        let next = i + 1;
-                        if (next % perrow == 0 && next != data.length) { row = myTable.insertRow(); }
-                    });
-
-                    // (D) ATTACH TABLE TO CONTAINER
-                    document.getElementById("table").appendChild(myTable);
-
-                    </script>
-            </table >
-
-        </div >
-
-    </main >
+    </main>
     <hr />
 
     <footer>
@@ -111,10 +91,16 @@
             fugiat n</p>
     </footer>
 
-    <script src="index.js " async defer>
-    </script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="index.js" async defer></script>
 
 </body>
 
