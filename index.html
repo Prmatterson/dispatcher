@@ -55,41 +55,55 @@
                 ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
                 fugiat n</p><br>
             <form action="">
-                <label for="work-order">Work Order:</label><br>
+                <label for="work-order">Work Order Number:</label><br>
                 <input type="text" id="work-order" name="work-order" value=""><br>
-                <label for="tech">Technician:</label><br>
+                <label for="tech">Technician Number:</label><br>
                 <input type="text" id="tech" name="tech" value=""><br>
-                <label for="start-time">Start Time (24H format e.g. 1800 for 6:00pm):</label><br>
+                <label for="start-time">Start Time (24-hour format, e.g. 1800 for 6:00pm):</label><br>
                 <input type="text" id="start-time" name="start-time" value=""><br>
-                <label for="duration">Duration (in tenths of an hour):</label><br>
+                <label for="duration">Duration (in tenths of an hour, e.g. 1.1 for 1 hour and 6 minutes):</label><br>
                 <input type="text" id="duration" name="duration" value=""><br><br>
                 <input type="submit" value="Submit">
             </form><br><br>
-            <table class = "table">
-                <tr>
-                    <th>Time</th>
-                    <th> Tech 1</th>
-                    <th>Tech 2</th>
-                    <th>Tech 3</th>
-                </tr>
-                <tr>
-                    <td>8.0</td>
-                    <td> Job 1 </td>
-                    <td> Job 3 </td>
-                    <td> no job </td>
-                </tr>
-                <tr>
-                    <td>8.1</td>
-                    <td>Job 2</td>
-                    <td>Job 4</td>
-                    <td>Job 5</td>
-                </tr>
-            </table>
 
-        </div>
+            <table id="table">
+                <script>
+                    // (B)  ARRAY
+                    let data = ["Time", "Tech 1", "Tech 2", "Tech 3", 8.0, "", "", "", 8.1, "", "", "", 8.2, "", "", "", 8.3, "", "", ""];
 
-    </main>
+
+                    // (C) CREATE HTML TABLE
+                    // (C1) HTML TABLE ELEMENT
+                    let myTable = document.createElement("table"),
+                        row = myTable.insertRow(), cell;
+
+                    // (C2) LOOP THROUGH ARRAY & GENERATE ROWS-CELLS
+                    let perrow = 4; // 4 CELLS PER ROW
+                    data.forEach((value, i) => {
+                        // ADD CELL
+                        cell = row.insertCell();
+                        cell.innerHTML = value;
+
+                        // CLICK ON CELL TO DO SOMETHING
+                        // cell.onclick = FUNCTION;
+
+
+                        // BREAK INTO NEXT ROW
+                        let next = i + 1;
+                        if (next % perrow == 0 && next != data.length) { row = myTable.insertRow(); }
+                    });
+
+                    // (D) ATTACH TABLE TO CONTAINER
+                    document.getElementById("table").appendChild(myTable);
+
+                    </script>
+            </table >
+
+        </div >
+
+    </main >
     <hr />
+
     <footer>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
