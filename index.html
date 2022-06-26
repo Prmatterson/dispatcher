@@ -25,64 +25,65 @@
     <h1 id="mainTitle2" class="title">Hello World</h1>-->
 
     <!--Table Structure-->
-
-    <header>
-        <nav>
-            <a href="/html/">Home</a> |
-            <a href="/css/">Settings</a> |
-            <a href="/js/">Account</a> |
+    <div class="navbar justify-content-center">
+        <div class="col-9">
+            <a href="/html/">Home</a>
+        </div>
+        <div class="col-1">
+            <a href="/css/">Settings</a>
+        </div>
+        <div class="col-1">
+            <a href="/js/">Account</a>
+        </div>
+        <div class="col-1">
             <a href="/python/">Log Out</a>
-        </nav>
-
-    </header>
-    <hr />
-    <main>
-
-        <div id="sidebar">
-            <ul>
-                <li>Add Repair Order</li>
-                <li>Edit Repair Order</li>
-                <li>Delete Repair Order</li>
-                <li>Change Day</li>
-            </ul>
         </div>
-        <hr />
-        <div id="main-content">
-            <h1>Title</h1>
-            <h2>Subtitle</h2>
-            <h3><strong>Author: </strong> Peter M.</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat n</p><br>
-            <form action="">
-                <label for="work-order">Work Order Number:</label><br>
-                <input type="text" id="work-order" name="work-order" value=""><br>
-                <label for="tech">Technician Number:</label><br>
-                <input type="text" id="tech" name="tech" value=""><br>
-                <label for="start-time">Start Time (24-hour format, e.g. 1800 for 6:00pm):</label><br>
-                <input type="text" id="start-time" name="start-time" value=""><br>
-                <label for="duration">Duration (in tenths of an hour, e.g. 1.1 for 1 hour and 6 minutes):</label><br>
-                <input type="text" id="duration" name="duration" value=""><br><br>
-                <input type="submit" value="Submit">
-            </form><br><br>
-
-            <div id="job-table">
-
+    </div>
+    <br><br>
+    <main class="container-fluid">
+        <div class="row">
+            <div class="col-2">
+                <div class="sidebar">
+                    <ul>
+                        <li>Add Repair Order</li>
+                        <li>Edit Repair Order</li>
+                        <li>Delete Repair Order</li>
+                        <li>Change Day</li>
+                    </ul>
+                </div>
             </div>
-            <br><br>
-            <div id="evens-odds">
 
+            <div class="col-10" id="main-content">
+                <h1>Title</h1>
+                <h2>Subtitle</h2>
+                <h3><strong>Author: </strong> Peter M.</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip
+                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                    dolore eu
+                    fugiat n</p><br>
+                <form action="">
+                    <label for="work-order">Work Order Number:</label><br>
+                    <input type="text" id="work-order" name="work-order" value=""><br>
+                    <label for="tech">Technician Number:</label><br>
+                    <input type="text" id="tech" name="tech" value=""><br>
+                    <label for="start-time">Start Time (24-hour format, e.g. 1800 for 6:00pm):</label><br>
+                    <input type="text" id="start-time" name="start-time" value=""><br>
+                    <label for="duration">Duration (in tenths of an hour, e.g. 1.1 for 1 hour and 6
+                        minutes):</label><br>
+                    <input type="text" id="duration" name="duration" value=""><br><br>
+                    <input type="submit" value="Submit">
+                </form><br><br>
 
-            </div>
-            <br><br>
-            <div id="test-table">
+                <div class="table" id="test-table">
 
+                </div>
             </div>
         </div>
-
     </main>
-    <hr />
+    </div>
 
     <footer>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et

@@ -4,11 +4,11 @@ function createRow(tableObj, tableData) {
     }
 }
 
-function cellOnClick(cellContent) {
-    let logMsg = "The content is " + cellContent;
-    alert(logMsg); // Creates a popup
-    console.log(cellObj); // Sends content to the debug viewer
-}
+// function cellOnClick(cellContent) {
+//     let logMsg = "The content is " + cellContent;
+//     alert(logMsg); // Creates a popup
+//     console.log(cellObj); // Sends content to the debug viewer
+//}
 
 function createCell(tableObj, tableData, row_index) {
     // Go through each of the rows
@@ -25,8 +25,8 @@ function createCell(tableObj, tableData, row_index) {
         let cellObj = rowObj.insertCell();
         // Add the cell content to cell object
         cellObj.innerHTML = singleCellContent;
-        //Click event
-        cellObj.onclick = cellOnClick
+        //Click event (active function cellOnClick along with below line)
+        //cellObj.onclick = cellOnClick
     }
 }
 function createHeader(tableHeaderData, tableObj) {
@@ -49,22 +49,19 @@ function createTable(tableData, tableHeaderData, tableId) {
 }
 
 function onReady() {
-    let tableHeaderData1 = ["H1", "H2", "H3", "H4"]
+    let tableHeaderData1 = ["Time", "Tech 1", "Tech 2", "Tech 3"]
     let tableData1 = [
-        [1, 4, 6, 6],
-        [9, 7, 8, 9]
-    ]
-    
-    let tableHeaderData2 = ["H1", "H2", "H3", "H4"]
-    let tableData2 = [
-        [1, 2, 3, 4],
-        [5, 6, 7, 8],
-        [9, 10, 11, 12]
+        [8.0, "Job 1", "No Job", "Job 2"],
+        [8.1, "Job 1", "Job 4", "Job 3"],
+        [8.2, "Job 1", "Job 4", "Job 3"],
+        [8.3, "Job 1", "Job 4", "Job 7"],
+        [8.4, "Job 5", "Job 6", "Job 7"],
+        [8.5, "Job 5", "Job 6", "Job 8"],
+        [8.6, "Job 9", "Job 6", "Job 8"],
+        [8.7, "Job 9", "Job 6", "Job 8"],
     ];
-
+    //What is the purpose of writing "let tableObj1 =" here as the same result happens without it?
     let tableObj1 = createTable(tableData1, tableHeaderData1, "test-table");
-    let tableObj2 = createTable(tableData2, tableHeaderData2, "evens-odds");
-
 }
-document.addEventListener("DOMContentLoaded", onReady);
 
+document.addEventListener("DOMContentLoaded", onReady);
