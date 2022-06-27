@@ -17,8 +17,7 @@
 </head>
 
 <!--Adding "fade" after "modal" when defining the class in the line below makes the cancel button not work, why?-->
-<div class="modal p-3 container col-4" id="add-repair-order-modal"
-    name="add-repair-order-modal">
+<div class="modal p-3 container col-4" id="add-repair-order-modal" name="add-repair-order-modal">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <header class="modal-header">
@@ -51,7 +50,7 @@
 </div>
 
 <div class="navbar bg-dark" id="navbar">
-    <div class="col">
+    <div class="col bg-warning">
         <a href="/html/">Dispatcher</a>
     </div>
     <div class="col">
@@ -73,18 +72,17 @@
         <a href="/python/">Log Out</a>
     </div>
 </div>
-<br><br>
-<main class="container-fluid">
+<main class="container-fluid bg-light">
     <div class="row">
         <div class="col-2">
-            <div class="sidebar" id="sidebar">
+            <div class="sidebar bg-primary rounded" id="sidebar">
                 <ul>
-                    <button type="button" class="btn" data-toggle="modal" data-target="#add-repair-order-modal">Add
-                        Repair Order</button>
-                    <button type="button" class="btn">Edit Repair Order</button>
-                    <button type="button" class="btn">Delete Repair Order</button>
-                    <button type="button" class="btn">Add Job to Repair Order</button>
-                    <button type="button" class="btn">Add Time to Repair Order</button>
+                    <br><button type="button" class="btn rounded" data-toggle="modal" data-target="#add-repair-order-modal">Add
+                        Repair Order</button><br><br>
+                    <button type="button" class="btn">Edit Repair Order</button><br><br>
+                    <button type="button" class="btn">Delete Repair Order</button><br><br>
+                    <button type="button" class="btn">Add Job to Repair Order</button><br><br>
+                    <button type="button" class="btn">Add Time to Repair Order</button><br><br>
                 </ul>
             </div>
         </div>

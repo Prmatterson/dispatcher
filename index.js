@@ -1,14 +1,24 @@
-function createRow(tableObj, tableData) {
-    for (let row_index = 0; row_index < tableData.length; row_index++) {
-        createCell(tableObj, tableData, row_index);
-    }
-}
-
 // =function cellOnClick(cellContent) {
 //     let logMsg = "The content is " + cellContent;
 //     alert(logMsg); // Creates a popup
 //     console.log(cellObj); // Sends content to the debug viewer
 //}
+
+
+function createHeader(tableHeaderData, tableObj) {
+    let headerRowObj = tableObj.insertRow();
+    for (let i = 0; i < tableHeaderData.length; i++) {
+        let headerCell = document.createElement("TH");
+        headerCell.innerHTML = tableHeaderData[i];
+        headerRowObj.appendChild(headerCell);
+    }
+}
+
+function createRow(tableObj, tableData) {
+    for (let row_index = 0; row_index < tableData.length; row_index++) {
+        createCell(tableObj, tableData, row_index);
+    }
+}
 
 function createCell(tableObj, tableData, row_index) {
     // Go through each of the rows
@@ -29,20 +39,11 @@ function createCell(tableObj, tableData, row_index) {
         //cellObj.onclick = cellOnClick
     }
 }
-function createHeader(tableHeaderData, tableObj) {
-    let headerRowObj = tableObj.insertRow();
-    for (let i = 0; i < tableHeaderData.length; i++) {
-        let headerCell = document.createElement("TH");
-        headerCell.innerHTML = tableHeaderData[i];
-        headerRowObj.appendChild(headerCell);
-    }
-}
 
 function createTable(tableData, tableHeaderData, tableId) {
     let tableObj = document.createElement("table"); // html object <table><table/>
     createHeader(tableHeaderData, tableObj);
     createRow(tableObj, tableData);
-
     //Assign the table JS object to the html object
     document.getElementById(tableId).appendChild(tableObj);
     return tableObj;
@@ -77,6 +78,7 @@ function onReady() {
         [10.3, "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job"],
         [10.4, "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job"],
         [10.5, "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job"],
+        // As soon as the line with 10.6 is included in the table, it no longer shows on the loaded webpage - it seems to be whatever is on line 82, as if adding one more array to the parent-array causes the issue
         [10.6, "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job"],
         [10.7, "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job"],
         [10.8, "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job"],
@@ -135,10 +137,11 @@ function onReady() {
         [16.1, "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job"],
         [16.2, "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job"],
         [16.3, "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job"],
-        [16.4, "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job"],
+        [16.4, "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job"]
     ];
-    //What is the purpose of writing "let tableObj1 =" here as the same result happens without it?
-    let tableObj1 = createTable(tableData1, tableHeaderData1, "test-table");
+    createTable(tableData1, tableHeaderData1, "test-table");
 }
 
+
 document.addEventListener("DOMContentLoaded", onReady);
+
