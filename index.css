@@ -1,0 +1,22 @@
+/* Colour palette should be about quiet confidence, the shop may be chaotic, but you, the dispatcher, are calm, collected and getting it all done */
+a {
+    color: #0d462c;
+}
+
+.navbar {
+    background: #d4d9df;
+}
+
+.footer {
+    background: #d4d9df;
+    color: #0d462c;
+    text-align: center;
+}
+
+button {
+    color: #0d462c;
+}
+
+.main-data {
+    background: #a4bca8
+}

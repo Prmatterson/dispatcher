@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="index.css">
 </head>
 
-<!--Adding "fade" after "modal" when defining the class in the line below makes the cancel button not work, why?-->
-<div class="modal p-3 container col-4" id="add-repair-order-modal" name="add-repair-order-modal">
+<!--Add Repair Order Modal-->
+<div class="modal fade p-3 container col-4" id="add-repair-order-modal" name="add-repair-order-modal">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <header class="modal-header">
@@ -41,7 +41,7 @@
                 <input type="test" id="job-description" name="job-description" value="">
             </form><br><br>
             <footer class="modal-footer">
-                <!--Clicking this button will activate a function to create a Repair Order-->
+                <!--Clicking this button will eventually activate a function to create a Repair Order-->
                 <button class="btn btn-success" type="button" value="Submit">Submit</button>
                 <button class="btn btn-secondary" type="button" value="Cancel" data-dismiss="modal">Cancel</button>
             </footer>
@@ -49,57 +49,59 @@
     </div>
 </div>
 
-<div class="navbar bg-dark" id="navbar">
-    <div class="col bg-warning">
-        <a href="/html/">Dispatcher</a>
+<!--Navigation Bar-->
+<div class="navbar container-fluid">
+    <div class="col">
+        <a href="#html">Home</a>
     </div>
     <div class="col">
-        <a href="/html/">Tech Schedule</a>
+        <a href="#html">Tech Schedule</a>
     </div>
     <div class="col">
-        <a href="/html/">Auto Sort</a>
+        <a href="#html">Auto Sort</a>
     </div>
     <div class="col">
-        <a href="/html/">Select Day</a>
+        <a href="#html">Select Day</a>
     </div>
     <div class="col">
-        <a href="/css/">Settings</a>
+        <a href="#html">Settings</a>
     </div>
     <div class="col">
-        <a href="/js/">Account</a>
+        <a href="#html">Account</a>
     </div>
     <div class="col">
-        <a href="/python/">Log Out</a>
+        <a href="#html">Log Out</a>
     </div>
 </div>
+
+
 <main class="container-fluid bg-light">
-    <div class="row">
+    <div class="main-data row">
+        <!--Sidebar-->
         <div class="col-2">
-            <div class="sidebar bg-primary rounded" id="sidebar">
-                <ul>
-                    <br><button type="button" class="btn rounded" data-toggle="modal" data-target="#add-repair-order-modal">Add
-                        Repair Order</button><br><br>
-                    <button type="button" class="btn">Edit Repair Order</button><br><br>
-                    <button type="button" class="btn">Delete Repair Order</button><br><br>
-                    <button type="button" class="btn">Add Job to Repair Order</button><br><br>
-                    <button type="button" class="btn">Add Time to Repair Order</button><br><br>
-                </ul>
+            <div class="btn-group-vertical" id="sidebar">
+                    <p></p>
+                    <button type="button" class="btn rounded" data-toggle="modal" data-target="#add-repair-order-modal">Add
+                        Repair Order</button>
+                    <button type="button" class="btn">Edit Repair Order</button>
+                    <button type="button" class="btn">Delete Repair Order</button>
+                    <button type="button" class="btn">Add Job to Repair Order</button>
+                    <button type="button" class="btn rounded">Add Time to Repair Order</button>
+                    <p></p>
             </div>
         </div>
-        <!--This is where the main table/job schedule goes, see index.js-->
+        <!--Main Table-->
         <div class="col-10" id="main-content">
-            <div class="table" id="test-table">
+            <div class="table table-striped-columns table-hover" id="test-table">
             </div>
         </div>
     </div>
 </main>
 </div>
 
-<footer class="container col-8">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-        fugiat n</p>
+<!--Footer-->
+<footer class="footer container-fluid">
+    <p>Footer</p>
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
