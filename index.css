@@ -4,7 +4,7 @@ a {
 }
 
 .navbar {
-    background: #d4d9df;
+    background: #d4dfd5;
 }
 
 .footer {
@@ -19,4 +19,24 @@ button {
 
 .main-data {
     background: #a4bca8
+}
+
+#test-table {
+    background: #d4d9df;
+    text-align: center;
+    overflow-x: scroll;
+
+}
+
+#sidebar-btn {
+    background: #d4d9df;
+}
+
+#repair-order-info {
+    height: 1000px;
+    background: #d4d9df;
+}
+
+.sticky-offset {
+    top: 40px;
 }
