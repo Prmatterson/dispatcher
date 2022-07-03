@@ -3,6 +3,14 @@ a {
     color: #0d462c;
 }
 
+p {
+    color: #0d462c;
+}
+
+button {
+    color: #0d462c;
+}
+
 .navbar {
     background: #d4dfd5;
 }
@@ -13,19 +21,29 @@ a {
     text-align: center;
 }
 
-button {
-    color: #0d462c;
-}
-
 .main-data {
     background: #a4bca8
+}
+
+.sticky-offset {
+    top: 40px;
+}
+
+.btn-group-vertical {
+    max-width: 100%
+}
+
+.btn-wrap-text {
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    text-overflow: ellipsis;
 }
 
 #test-table {
     background: #d4d9df;
     text-align: center;
     overflow-x: scroll;
-
 }
 
 #sidebar-btn {
@@ -35,8 +53,4 @@ button {
 #repair-order-info {
     height: 1000px;
     background: #d4d9df;
-}
-
-.sticky-offset {
-    top: 40px;
 }

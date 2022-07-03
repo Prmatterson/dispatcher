@@ -33,7 +33,7 @@ function createCell(tableObj, tableData, row_index) {
         let singleCellContent = singleRowContent[columnIndex];
         // Create cell
         let cellObj = rowObj.insertCell();
-        cellObj.style.width = '20vw';
+        cellObj.style.width = '8vw';
         // Add the cell content to cell object
         cellObj.innerHTML = singleCellContent;
         //Click event (active function cellOnClick along with below line)
@@ -137,9 +137,11 @@ let tableData1 = [
     [16.3, "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job"],
     [16.4, "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job", "No Job"]
 ];
-
 createTable(tableData1, tableHeaderData1, "test-table");
 
+function onReady (createTable){
+
+}
 // Function to Create Repair Order when Submit Button Pressed in Add Repair Order Modal
 $(document).ready(function () {
     $("#add-repair-order-submit-button").click(function () {
