@@ -42,10 +42,10 @@ function createCell(tableObj, tableData, row_index) {
 }
 
 function createTable(tableData, tableHeaderData, tableId) {
-    let tableObj = document.createElement("table"); // html object <table><table/>
+    let tableObj = document.createElement("table"); // HTML object <table><table/>
     createHeader(tableHeaderData, tableObj);
     createRow(tableObj, tableData);
-    //Assign the table JS object to the html object
+    //Assign the table JS object to the HTML object
     document.getElementById(tableId).appendChild(tableObj);
     return tableObj;
 }
@@ -145,9 +145,11 @@ function onReady (createTable){
 // Function to Create Repair Order when Submit Button Pressed in Add Repair Order Modal
 $(document).ready(function () {
     $("#add-repair-order-submit-button").click(function () {
-        // console.log below is a placeholder until function is created - tested and confirmed to work
+        // console.log below is a placeholder until function is created - basic structure of this function is tested and confirmed to work
         console.log(`Test`);
     });
 });
 
+// Makes sure to not load any Javascript until HTML/CSS fully loaded
 document.addEventListener("DOMContentLoaded", onReady);
+

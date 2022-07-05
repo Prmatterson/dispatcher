@@ -16,237 +16,282 @@
     <link rel="stylesheet" href="index.css">
 </head>
 
-<!--Add Repair Order Modal-->
-<div class="modal fade p-3 container col-4" id="add-repair-order-modal" name="add-repair-order-modal">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <header class="modal-header">
-                <h5 class="modal-title">Add Repair Order</h5>
-            </header><br>
-            <form class="modal-body" id="add-ro" name="add-ro">
-                <label for="work-order">Repair Order Number:</label><br>
-                <input type="text" id="work-order" name="work-order" value="">
-                <br>
-                <label for="tech">Technician Number:</label><br>
-                <input type="text" id="tech" name="tech" value="">
-                <br>
-                <label for="promise-time">Promise Time (12 or 24 hour format (e.g. 6:00pm or 1800):</label><br>
-                <input type="text" id="promise-time" name="promise-time" value="">
-                <br>
-                <label for="duration">Duration (in tenths of an hour, e.g. 1.1 for 1 hour and 6
-                    minutes):</label><br>
-                <input type="text" id="duration" name="duration" value="">
-                <br>
-                <label for="job-description">Job Description (e.g. oil change, tire rotation)</label><br>
-                <input type="test" id="job-description" name="job-description" value="">
-                <br>
-                <label for="ro-note">Notes (e.g. special requests)</label><br>
-                <input type="test" id="ro-note" name="ro-note" value="">
-            </form><br><br>
-            <footer class="modal-footer">
-                <!--Clicking this button will eventually activate a function to create a Repair Order-->
-                <button class="btn btn-success" type="button" id="add-repair-order-submit-button"
-                    value="Submit">Submit</button>
-                <button class="btn btn-secondary" type="button" value="Cancel" data-dismiss="modal">Cancel</button>
-            </footer>
+<body>
+    <!--Add Repair Order Modal-->
+    <div class="modal fade p-3 container col-4" id="add-repair-order-modal" name="add-repair-order-modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h5 class="modal-title">Add Repair Order</h5>
+                </header><br>
+                <form class="modal-body" id="add-ro" name="add-ro">
+                    <label for="work-order">Repair Order Number:</label><br>
+                    <input type="text" id="work-order" name="work-order" value="RO Number">
+                    <br>
+                    <label for="tech">Technician Number:</label><br>
+                    <input type="text" id="tech" name="tech" value="">
+                    <br>
+                    <label for="promise-time">Promise Time (12 or 24 hour format (e.g. 6:00pm or 1800):</label><br>
+                    <input type="text" id="promise-time" name="promise-time" value="">
+                    <br>
+                    <label for="duration">Duration (in tenths of an hour, e.g. 1.1 for 1 hour and 6
+                        minutes):</label><br>
+                    <input type="text" id="duration" name="duration" value="">
+                    <br>
+                    <label for="job-description">Job Description (e.g. oil change, tire rotation)</label><br>
+                    <input type="test" id="job-description" name="job-description" value="">
+                    <br>
+                    <label for="ro-note">Notes (e.g. special requests)</label><br>
+                    <input type="test" id="ro-note" name="ro-note" value="">
+                </form><br><br>
+                <footer class="modal-footer">
+                    <!--Clicking this button will eventually activate a function to create a Repair Order-->
+                    <button class="btn btn-success" type="button" id="add-repair-order-submit-button"
+                        value="Submit">Submit</button>
+                    <button class="btn btn-secondary" type="button" value="Cancel" data-dismiss="modal">Cancel</button>
+                </footer>
+            </div>
         </div>
     </div>
-</div>
 
-<!--Edit Repair Order Modal-->
-<div class="modal fade p-3 container col-4" id="edit-repair-order-modal" name="edit-repair-order-modal">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <header class="modal-header">
-                <h5 class="modal-title">Edit Repair Order</h5>
-            </header><br>
-            <form class="modal-body" id="edit-ro" name="edit-ro">
-                <label for="work-order">Repair Order Number:</label><br>
-                <input type="text" id="work-order" name="work-order" value="">
-            </form><br><br>
-            <footer class="modal-footer">
-                <!--Clicking this button will eventually activate a function to edit a Repair Order-->
-                <button class="btn btn-success" type="button" value="Submit">Submit</button>
-                <button class="btn btn-secondary" type="button" value="Cancel" data-dismiss="modal">Cancel</button>
-            </footer>
+    <!--Edit Repair Order Modal-->
+    <div class="modal fade p-3 container col-4" id="edit-repair-order-modal" name="edit-repair-order-modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h5 class="modal-title">Edit Repair Order</h5>
+                </header><br>
+                <form class="modal-body" id="edit-ro" name="edit-ro">
+                    <label for="work-order">Repair Order Number:</label><br>
+                    <input type="text" id="work-order" name="work-order" value="">
+                </form><br><br>
+                <footer class="modal-footer">
+                    <!--Clicking this button will eventually activate a function to edit a Repair Order-->
+                    <button class="btn btn-success" type="button" value="Submit">Submit</button>
+                    <button class="btn btn-secondary" type="button" value="Cancel" data-dismiss="modal">Cancel</button>
+                </footer>
+            </div>
         </div>
     </div>
-</div>
 
-<!--Delete Repair Order Modal-->
-<div class="modal fade p-3 container col-4" id="delete-repair-order-modal" name="delete-repair-order-modal">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <header class="modal-header">
-                <h5 class="modal-title">Delete Repair Order</h5>
-            </header><br>
-            <form class="modal-body" id="delete-ro" name="delete-ro">
-                <label for="work-order">Repair Order Number:</label><br>
-                <input type="text" id="work-order" name="work-order" value="">
-            </form><br><br>
-            <footer class="modal-footer">
-                <!--Clicking this button will eventually activate a function to delete a Repair Order-->
-                <button class="btn btn-success" type="button" value="Submit">Submit</button>
-                <button class="btn btn-secondary" type="button" value="Cancel" data-dismiss="modal">Cancel</button>
-            </footer>
+    <!--Delete Repair Order Modal-->
+    <div class="modal fade p-3 container col-4" id="delete-repair-order-modal" name="delete-repair-order-modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h5 class="modal-title">Delete Repair Order</h5>
+                </header><br>
+                <form class="modal-body" id="delete-ro" name="delete-ro">
+                    <label for="work-order">Repair Order Number:</label><br>
+                    <input type="text" id="work-order" name="work-order" value="">
+                </form><br><br>
+                <footer class="modal-footer">
+                    <!--Clicking this button will eventually activate a function to delete a Repair Order-->
+                    <button class="btn btn-success" type="button" value="Submit">Submit</button>
+                    <button class="btn btn-secondary" type="button" value="Cancel" data-dismiss="modal">Cancel</button>
+                </footer>
+            </div>
         </div>
     </div>
-</div>
 
-<!--Add Job to Repair Order Modal-->
-<div class="modal fade p-3 container col-4" id="add-job-modal" name="add-job-modal">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <header class="modal-header">
-                <h5 class="modal-title">Add Job to Repair Order</h5>
-            </header><br>
-            <form class="modal-body" id="add-job" name="add-job">
-                <label for="work-order">Repair Order Number:</label><br>
-                <input type="text" id="work-order" name="work-order" value="">
-                <br>
-                <label for="duration">Duration (in tenths of an hour, e.g. 1.1 for 1 hour and 6
-                    minutes):</label><br>
-                <input type="text" id="duration" name="duration" value="">
-                <br>
-                <label for="job-description">Job Description (e.g. oil change, tire rotation)</label><br>
-                <input type="test" id="job-description" name="job-description" value="">
-            </form><br><br>
-            <footer class="modal-footer">
-                <!--Clicking this button will eventually activate a function to add a job to a Repair Order-->
-                <button class="btn btn-success" type="button" value="Submit">Submit</button>
-                <button class="btn btn-secondary" type="button" value="Cancel" data-dismiss="modal">Cancel</button>
-            </footer>
+    <!--Add Job to Repair Order Modal-->
+    <div class="modal fade p-3 container col-4" id="add-job-modal" name="add-job-modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h5 class="modal-title">Add Job to Repair Order</h5>
+                </header><br>
+                <form class="modal-body" id="add-job" name="add-job">
+                    <label for="work-order">Repair Order Number:</label><br>
+                    <input type="text" id="work-order" name="work-order" value="">
+                    <br>
+                    <label for="duration">Duration (in tenths of an hour, e.g. 1.1 for 1 hour and 6
+                        minutes):</label><br>
+                    <input type="text" id="duration" name="duration" value="">
+                    <br>
+                    <label for="job-description">Job Description (e.g. oil change, tire rotation)</label><br>
+                    <input type="test" id="job-description" name="job-description" value="">
+                </form><br><br>
+                <footer class="modal-footer">
+                    <!--Clicking this button will eventually activate a function to add a job to a Repair Order-->
+                    <button class="btn btn-success" type="button" value="Submit">Submit</button>
+                    <button class="btn btn-secondary" type="button" value="Cancel" data-dismiss="modal">Cancel</button>
+                </footer>
+            </div>
         </div>
     </div>
-</div>
 
-<!--Add Time to Repair Order Modal-->
-<div class="modal fade p-3 container col-4" id="add-time-modal" name="add-time-modal">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <header class="modal-header">
-                <h5 class="modal-title">Add Work Time to Repair Order</h5>
-            </header><br>
-            <form class="modal-body" id="add-time" name="add-time">
-                <label for="work-order">Repair Order Number:</label><br>
-                <input type="text" id="work-order" name="work-order" value="">
-                <br>
-                <label for="duration">Duration (in tenths of an hour, e.g. 1.1 for 1 hour and 6
-                    minutes):</label><br>
-                <input type="text" id="duration" name="duration" value="">
-                <br>
-                <label for="ro-note">Notes (e.g. reason time added)</label><br>
-                <input type="test" id="ro-note" name="ro-note" value="">
-            </form><br><br>
-            <footer class="modal-footer">
-                <!--Clicking this button will eventually activate a function to add time to a Repair Order-->
-                <button class="btn btn-success" type="button" value="Submit">Submit</button>
-                <button class="btn btn-secondary" type="button" value="Cancel" data-dismiss="modal">Cancel</button>
-            </footer>
+    <!--Add Time to Repair Order Modal-->
+    <div class="modal fade p-3 container col-4" id="add-time-modal" name="add-time-modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h5 class="modal-title">Add Work Time to Repair Order</h5>
+                </header><br>
+                <form class="modal-body" id="add-time" name="add-time">
+                    <label for="work-order">Repair Order Number:</label><br>
+                    <input type="text" id="work-order" name="work-order" value="">
+                    <br>
+                    <label for="duration">Duration (in tenths of an hour, e.g. 1.1 for 1 hour and 6
+                        minutes):</label><br>
+                    <input type="text" id="duration" name="duration" value="">
+                    <br>
+                    <label for="ro-note">Notes (e.g. reason time added)</label><br>
+                    <input type="test" id="ro-note" name="ro-note" value="">
+                </form><br><br>
+                <footer class="modal-footer">
+                    <!--Clicking this button will eventually activate a function to add work time to a Repair Order-->
+                    <button class="btn btn-success" type="button" value="Submit">Submit</button>
+                    <button class="btn btn-secondary" type="button" value="Cancel" data-dismiss="modal">Cancel</button>
+                </footer>
+            </div>
         </div>
     </div>
-</div>
 
-<!--Change Promise Time of Repair Order Modal-->
-<div class="modal fade p-3 container col-4" id="change-time-modal" name="change-time-modal">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <header class="modal-header">
-                <h5 class="modal-title">Change Promise Time of Repair Order</h5>
-            </header><br>
-            <form class="modal-body" id="change-time" name="change-time">
-                <label for="work-order">Repair Order Number:</label><br>
-                <input type="text" id="work-order" name="work-order" value="">
-                <br>
-                <label for="promise-time">Promise Time (24-hour format, e.g. 1800 for 6:00pm):</label><br>
-                <input type="text" id="promise-time" name="promise-time" value="">
-                <br>
-            </form><br><br>
-            <footer class="modal-footer">
-                <!--Clicking this button will eventually activate a function to add a job to a Repair Order-->
-                <button class="btn btn-success" type="button" value="Submit">Submit</button>
-                <button class="btn btn-secondary" type="button" value="Cancel" data-dismiss="modal">Cancel</button>
-            </footer>
+    <!--Change Promise Time of Repair Order Modal-->
+    <div class="modal fade p-3 container col-4" id="change-time-modal" name="change-time-modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h5 class="modal-title">Change Promise Time of Repair Order</h5>
+                </header><br>
+                <form class="modal-body" id="change-time" name="change-time">
+                    <label for="work-order">Repair Order Number:</label><br>
+                    <input type="text" id="work-order" name="work-order" value="">
+                    <br>
+                    <label for="promise-time">New Promise Time (24-hour format, e.g. 1800 for 6:00pm):</label><br>
+                    <input type="text" id="promise-time" name="promise-time" value="">
+                    <br>
+                </form><br><br>
+                <footer class="modal-footer">
+                    <!--Clicking this button will eventually activate a function to change promise time of a Repair Order-->
+                    <button class="btn btn-success" type="button" value="Submit">Submit</button>
+                    <button class="btn btn-secondary" type="button" value="Cancel" data-dismiss="modal">Cancel</button>
+                </footer>
+            </div>
         </div>
     </div>
-</div>
 
-<!--Navigation Bar-->
-<div class="navbar container-fluid sticky-top">
-    <div class="col">
-        <a href="#html">Home</a>
+    <!--Navigation Bar-->
+    <div class="navbar container-fluid sticky-top">
+        <div class="col">
+            <a href="#html">Home</a>
+        </div>
+        <div class="col">
+            <a href="#html">Tech Schedule</a>
+        </div>
+        <div class="col">
+            <a href="#html">Auto-Dispatch</a>
+        </div>
+        <div class="col">
+            <a href="#html">Select Day</a>
+        </div>
+        <div class="col">
+            <a href="#html">Settings</a>
+        </div>
+        <div class="col">
+            <a href="#html">Account</a>
+        </div>
+        <div class="col">
+            <a href="#html">Log Out</a>
+        </div>
     </div>
-    <div class="col">
-        <a href="#html">Tech Schedule</a>
-    </div>
-    <div class="col">
-        <a href="#html">Auto Sort</a>
-    </div>
-    <div class="col">
-        <a href="#html">Select Day</a>
-    </div>
-    <div class="col">
-        <a href="#html">Settings</a>
-    </div>
-    <div class="col">
-        <a href="#html">Account</a>
-    </div>
-    <div class="col">
-        <a href="#html">Log Out</a>
-    </div>
-</div>
 
-<!--Main Page Data-->
-<main class="container col-12 bg-light">
-    <div class="main-data row">
-        <div class="col-2" id="left-column">
-            <!--Sidebar-->
-            <div class="btn-group-vertical sticky-top sticky-offset" id="sidebar">
+    <!--Main Page Data-->
+    <main class="container col-12 bg-light">
+        <div class="main-data row">
+            <div class="col-2" id="left-column">
+                <!--Sidebar-->
+                <div class="btn-group-vertical sticky-top sticky-offset" id="sidebar">
+                    <p></p>
+                    <!--Add Repair Order Button-->
+                    <button class="btn rounded-top btn-wrap-text" type="button" id="sidebar-btn" data-toggle="modal"
+                        data-target="#add-repair-order-modal">Add Repair Order</button>
+                    <!--Edit Repair Order Button-->
+                    <button class="btn btn-wrap-text" type="button" id="sidebar-btn" data-toggle="modal"
+                        data-target="#edit-repair-order-modal">Edit Repair Order</button>
+                    <!--Delete Repair Order Button-->
+                    <button class="btn btn-wrap-text" type="button" id="sidebar-btn" data-toggle="modal"
+                        data-target="#delete-repair-order-modal">Delete Repair Order</button>
+                    <!--Add Job to Repair Order Button-->
+                    <button class="btn btn-wrap-text" type="button" id="sidebar-btn" data-toggle="modal"
+                        data-target="#add-job-modal">Add Job to Repair Order</button>
+                    <!--Add Time to Repair Order Button-->
+                    <button class="btn btn-wrap-text" type="button" id="sidebar-btn" data-toggle="modal"
+                        data-target="#add-time-modal">Add Work Time to Repair Order</button>
+                    <!--Add Change Promise Time of Repair Order Button-->
+                    <button class="btn btn-wrap-text rounded-bottom" type="button" id="sidebar-btn" data-toggle="modal"
+                        data-target="#change-time-modal">Change Promise Time of Repair Order</button>
+                    <p></p>
+                    <!--Below will be where information about the highlighted job in the table will appears-->
+                    <div class="col-12" id="repair-order-info">
+                        <p><br><br><br><br><br><br><br><br><br><br><br>Information Window for Current Job<br><br><br><br><br><br><br><br><br><br><br><br></p>
+                    </div>
+                </div>
+            </div>
+            <!--Dispatch Table/Schedule-->
+            <div class="col-10" id="main-content">
                 <p></p>
-                <!--Add Repair Order Button-->
-                <button class="btn rounded-top btn-wrap-text" type="button" id="sidebar-btn" data-toggle="modal"
-                    data-target="#add-repair-order-modal">Add
-                    Repair Order</button>
-                <!--Edit Repair Order Button-->
-                <button class="btn btn-wrap-text" type="button" id="sidebar-btn" data-toggle="modal"
-                    data-target="#edit-repair-order-modal">Edit Repair Order</button>
-                <!--Delete Repair Order Button-->
-                <button class="btn btn-wrap-text" type="button" id="sidebar-btn" data-toggle="modal"
-                    data-target="#delete-repair-order-modal">Delete Repair Order</button>
-                <!--Add Job to Repair Order Button-->
-                <button class="btn btn-wrap-text" type="button" id="sidebar-btn" data-toggle="modal" data-target="#add-job-modal">Add
-                    Job to
-                    Repair Order</button>
-                <!--Add Time to Repair Order Button-->
-                <button class="btn btn-wrap-text" type="button" id="sidebar-btn" data-toggle="modal" data-target="#add-time-modal">Add
-                    Work
-                    Time to Repair Order</button>
-                <!--Add Change Promise Time of Repair Order Button-->
-                <button class="btn btn-wrap-text rounded-bottom" type="button" id="sidebar-btn" data-toggle="modal"
-                    data-target="#change-time-modal">Change
-                    Promise Time of Repair Order</button>
-                <p></p>
-                <!--Below will be where information about the highlighted job in the table will appears-->
-                <div class="col-12" id="repair-order-info">
-                    <p><br><br><br><br><br><br><br><br><br><br><br>Information
-                    Window<br><br><br><br><br><br><br><br><br><br><br><br></p>
+                <div class="table table-striped-columns table-hover" id="test-table">
                 </div>
             </div>
         </div>
-        <!--Dispatch Table/Schedule-->
-        <div class="col-10" id="main-content">
-            <p></p>
-            <div class="table table-striped-columns table-hover" id="test-table">
-            </div>
-        </div>
+    </main>
     </div>
-</main>
-</div>
+</body>
 
 <!--Footer-->
 <footer class="footer container-fluid">
     <p>Footer</p>
 </footer>
+
+<!--Clear Data from Add Repair Order Modal on Close of Window-->
+<script>
+    $('#add-repair-order-modal').on('hidden.bs.modal', function (e) {
+        $(this).find('#add-ro')[0].reset();
+    });
+</script>
+
+<!--Clear Data from Edit Repair Order Modal on Close of Window-->
+<script>
+    $('#edit-repair-order-modal').on('hidden.bs.modal', function (e) {
+        $(this).find('#edit-ro')[0].reset();
+    });
+</script>
+
+<!--Clear Data from Delete Repair Order Modal on Close of Window-->
+<script>
+    $('#delete-repair-order-modal').on('hidden.bs.modal', function (e) {
+        $(this).find('#delete-ro')[0].reset();
+    });
+</script>
+
+<!--Clear Data from Add Job to Repair Order Modal on Close of Window-->
+<script>
+    $('#add-job-modal').on('hidden.bs.modal', function (e) {
+        $(this).find('#add-job')[0].reset();
+    });
+</script>
+
+<!--Clear Data from Add Time to Repair Order Modal on Close of Window-->
+<script>
+    $('#add-time-modal').on('hidden.bs.modal', function (e) {
+        $(this).find('#add-time')[0].reset();
+    });
+</script>
+
+<!--Clear Data from Change Promise Time of Repair Order Modal on Close of Window-->
+<script>
+    $('#change-time-modal').on('hidden.bs.modal', function (e) {
+        $(this).find('#change-time')[0].reset();
+    });
+</script>
+
+<!--JQuery Script-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!--Script for My Javascript-->
+<script src="index.js" async defer></script>
 
 <!--Bootstrap Scripts-->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -258,52 +303,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-
-<!--JQuery Script-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-<!--Clear Data from Add Repair Order Modal-->
-<script>
-    $('#add-repair-order-modal').on('hidden.bs.modal', function (e) {
-        $(this).find('#add-ro')[0].reset();
-    });
-</script>
-
-<!--Clear Data from Edit Repair Order Modal-->
-<script>
-    $('#edit-repair-order-modal').on('hidden.bs.modal', function (e) {
-        $(this).find('#edit-ro')[0].reset();
-    });
-</script>
-
-<!--Clear Data from Delete Repair Order Modal-->
-<script>
-    $('#delete-repair-order-modal').on('hidden.bs.modal', function (e) {
-        $(this).find('#delete-ro')[0].reset();
-    });
-</script>
-
-<!--Clear Data from Add Job to Repair Order Modal-->
-<script>
-    $('#add-job-modal').on('hidden.bs.modal', function (e) {
-        $(this).find('#add-job')[0].reset();
-    });
-</script>
-
-<!--Clear Data from Add Time to Repair Order Modal-->
-<script>
-    $('#add-time-modal').on('hidden.bs.modal', function (e) {
-        $(this).find('#add-time')[0].reset();
-    });
-</script>
-
-<!--Clear Data from Change Promise Time of Repair Order Modal-->
-<script>
-    $('#change-time-modal').on('hidden.bs.modal', function (e) {
-        $(this).find('#change-time')[0].reset();
-    });
-</script>
-
-<script src="index.js" async defer></script>
 
 </html>
