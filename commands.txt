@@ -1,0 +1,53 @@
+CodeAcademy  = Command Line
+https://www.codecademy.com/learn/getting-started-off-platform-for-data-science/modules/dsop-command-line
+
+clear - Empty the command line
+pwd - show the current path
+cd - go to a specific folder, e.g. cd /Users/petermatterson/Desktop/Get Coding/Dispatcher
+ls - list # files in a folder, e.g. ls /Users/petermatterson/Desktop/Get Coding/Dispatcher
+cd ./ - going to the current folder (relative paths)
+cd ../ - going to the parent folder (relative paths)
+
+Install NPM and NodeJS using Brew (MacOS Library Manager)
+NPM - Library Manager
+NODEJS - Create your own server
+
+Install brew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew --version
+
+Install computer dependencies/libraries/tools/code packages
+brew install npm
+brew install nodejs
+
+npm --version
+node --version
+
+Install project dependencies/libraries/tools/code packages
+npm install bootstrap  --save
+npm install jquery  --save
+npm install express  --save
+npm install ejs  --save
+
+Initialize your project using Node JS (server)
+npm init
+
+Run server that hosts the website (http://localhost:8000)
+node server.js 
+
+Cancel the server - click terminal and press Ctrl + C
+
+
+
+# Tasks 
+
+1. Read more about:
+    1. EJS 
+    2. NPM
+    3. NODEJS
+    4. WEBPACK 
+    5. Command line
+2. Translate all html to EJS Partials
+
+Bonus (Follow example to create table dynamically)
+https://www.geeksforgeeks.org/use-ejs-as-template-engine-in-node-js/
