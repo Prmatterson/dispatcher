@@ -1,0 +1,41 @@
+<!--Main Page Data-->
+<main class="container col-12 bg-light">
+    <div class="main-data row">
+        <div class="col-2" id="left-column">
+            <!--Sidebar-->
+            <div class="btn-group-vertical sticky-top sticky-offset" id="sidebar">
+                <p></p>
+                <!--Add Repair Order Button-->
+                <button class="btn rounded-top btn-wrap-text" type="button" id="sidebar-btn" data-toggle="modal"
+                    data-target="#add-repair-order-modal">Add Repair Order</button>
+                <!--Edit Repair Order Button-->
+                <button class="btn btn-wrap-text" type="button" id="sidebar-btn" data-toggle="modal"
+                    data-target="#edit-repair-order-modal">Edit Repair Order</button>
+                <!--Delete Repair Order Button-->
+                <button class="btn btn-wrap-text" type="button" id="sidebar-btn" data-toggle="modal"
+                    data-target="#delete-repair-order-modal">Delete Repair Order</button>
+                <!--Add Job to Repair Order Button-->
+                <button class="btn btn-wrap-text" type="button" id="sidebar-btn" data-toggle="modal"
+                    data-target="#add-job-modal">Add Job to Repair Order</button>
+                <!--Add Time to Repair Order Button-->
+                <button class="btn btn-wrap-text" type="button" id="sidebar-btn" data-toggle="modal"
+                    data-target="#add-time-modal">Add Work Time to Repair Order</button>
+                <!--Add Change Promise Time of Repair Order Button-->
+                <button class="btn btn-wrap-text rounded-bottom" type="button" id="sidebar-btn" data-toggle="modal"
+                    data-target="#change-time-modal">Change Promise Time of Repair Order</button>
+                <p></p>
+                <!--Below will be where information about the highlighted job in the table will appears-->
+                <div class="col-12" id="repair-order-info">
+                    <p><br><br><br><br><br><br><br><br><br><br><br>Information Window for Current
+                        Job<br><br><br><br><br><br><br><br><br><br><br><br></p>
+                </div>
+            </div>
+        </div>
+        <!--Dispatch Table/Schedule-->
+        <div class="col-10" id="main-content">
+            <p></p>
+            <div class="table table-striped-columns table-hover" id="test-table">
+            </div>
+        </div>
+    </div>
+</main>
