@@ -40,8 +40,8 @@ button {
     text-overflow: ellipsis;
 }
 
-#test-table {
-    background: #d4d9df;
+#time-table {
+    background-color:#d4d9df;
     text-align: center;
     overflow-x: scroll;
 }

@@ -1,4 +1,3 @@
-</div>
 <!--Add Repair Order Modal-->
 <div class="modal fade p-3 container col-4" id="add-repair-order-modal" name="add-repair-order-modal">
     <div class="modal-dialog modal-dialog-centered">
@@ -153,47 +152,4 @@
         </div>
     </div>
 </div>
-</body>
-
-
-        <!--Clear Data from Add Repair Order Modal on Close of Window-->
-        <script>
-            $('#add-repair-order-modal').on('hidden.bs.modal', function (e) {
-                $(this).find('#add-ro')[0].reset();
-            });
-        </script>
-
-        <!--Clear Data from Edit Repair Order Modal on Close of Window-->
-        <script>
-            $('#edit-repair-order-modal').on('hidden.bs.modal', function (e) {
-                $(this).find('#edit-ro')[0].reset();
-            });
-        </script>
-
-        <!--Clear Data from Delete Repair Order Modal on Close of Window-->
-        <script>
-            $('#delete-repair-order-modal').on('hidden.bs.modal', function (e) {
-                $(this).find('#delete-ro')[0].reset();
-            });
-        </script>
-
-        <!--Clear Data from Add Job to Repair Order Modal on Close of Window-->
-        <script>
-            $('#add-job-modal').on('hidden.bs.modal', function (e) {
-                $(this).find('#add-job')[0].reset();
-            });
-        </script>
-
-        <!--Clear Data from Add Time to Repair Order Modal on Close of Window-->
-        <script>
-            $('#add-time-modal').on('hidden.bs.modal', function (e) {
-                $(this).find('#add-time')[0].reset();
-            });
-        </script>
-
-        <!--Clear Data from Change Promise Time of Repair Order Modal on Close of Window-->
-        <script>
-            $('#change-time-modal').on('hidden.bs.modal', function (e) {
-                $(this).find('#change-time')[0].reset();
-            });
-        </script>
+ 
