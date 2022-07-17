@@ -51,11 +51,3 @@ Cancel the server - click terminal and press Ctrl + C
 
 Bonus (Follow example to create table dynamically)
 https://www.geeksforgeeks.org/use-ejs-as-template-engine-in-node-js/
-
-
-Q1. How to get Modal Scripts to apply to Modals (i.e. the clearing form scripts when pressing cancel)
-Q2. How to get main.css to apply to all partials
-
-Create functions in one partial and set them up for export by using module.exports.[function-name]
-Make function available in another partial by using constant [ function name that should match the file name ] require( name of file ) to get all exported functions,
-     or const { specific exported function name } = require( name of file ) to get a specific function only

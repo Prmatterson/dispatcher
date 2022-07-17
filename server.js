@@ -9,10 +9,13 @@ var cors = require('cors');
 var path = require('path');
 
 var app = express();
+
 app.use(cors());
 app.use(express.static('public')); //e.g localhost:8000/css/main.css
 // app.use('/static', express.static(path.join(__dirname, 'public'))); // e.g localhost:8000/static/css/main.css
 // Set EJS as templating engine
+
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => { // => http://localhost:8000/
@@ -20,9 +23,9 @@ app.get('/', (req, res) => { // => http://localhost:8000/
     // page to be rendered as input
     // This page should be in the views folder
     // in the root directory.
-    res.render('home', {author: "Peter M.", pageTitle: "Dispatcher", timeTable: data.timeTable, timeTableHeader: data.timeTableheader});
+    res.render('home', { author: "Peter M.", pageTitle: "Dispatcher", timeTable: data.timeTable, timeTableHeader: data.timeTableheader });
+    res.render('about', { author: "Peter M.", pageTitle: "Dispatcher" });
 });
-
 
 var server = app.listen(8000, function () { // server hosted in => http://localhost:8000
     console.log('listening to port 8000')
