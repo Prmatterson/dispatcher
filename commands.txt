@@ -24,10 +24,9 @@ npm --version
 node --version
 
 Install project dependencies/libraries/tools/code packages
-npm install bootstrap  --save
-npm install jquery  --save
 npm install express  --save
 npm install ejs  --save
+npm install body-parser --save
 
 Initialize your project using Node JS (server)
 npm init
@@ -51,3 +50,10 @@ Cancel the server - click terminal and press Ctrl + C
 
 Bonus (Follow example to create table dynamically)
 https://www.geeksforgeeks.org/use-ejs-as-template-engine-in-node-js/
+
+Reference Form using Post
+<form action="http://127.0.0.1:8000/process_post" method="POST">  
+First Name: <input type="text" name="first_name">  <br>  
+Last Name: <input type="text" name="last_name">  
+<input type="submit" value="Submit">  
+</form>  
