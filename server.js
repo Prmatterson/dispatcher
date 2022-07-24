@@ -15,7 +15,7 @@ var path = require('path');
 var bodyParser = require("body-parser");
 var app = express();
 app.use(bodyParser.json()); //USE JSON payloads by default
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(cors());
 app.use(express.static('public')); //e.g localhost:8000/css/main.css
@@ -25,13 +25,48 @@ app.use(express.static('public')); //e.g localhost:8000/css/main.css
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-function addRepairOrder(res, orderPayload){
+// Defining Functions for Catching Errors in Modals
+function addRepairOrder(res, orderPayload) {
     // By using urlencodedParser, the payload inside req is already a JSON object easier to read as follows req.body.whatever_field_you_are_passing
-    if(orderPayload.tech == null || orderPayload.tech == ""){ 
-       res.status(400).send(`Error: missing "Technitian's Number".`);
+    if (orderPayload.workOrder == null || orderPayload.workOrder == "") {
+        res.status(400).send(`Error: missing "Repair Order Number".`);
+    } if (orderPayload.tech == null || orderPayload.tech == "") {
+        res.status(400).send(`Error: missing "Technnician Number".`);
+    } if (orderPayload.promiseTime == null || orderPayload.promiseTime == "") {
+        res.status(400).send(`Error: missing "Promise Time"`);
+    } if (orderPayload.duration == null || orderPayload.duration == "") {
+        res.status(400).send(`Error: missing "Duration"`);
+    } if (orderPayload.jobDescription == null || orderPayload.jobDescription == "") {
+        res.status(400).send(`Error: missing "Job Description"`);
     }
     res.status(200).send("Success.");
 }
+
+function editRepairOrder(res, orderPayload) {
+    if (orderPayload.editWorkOrder == null || orderPayload.editWorkOrder == "") {
+        res.status(400).send(`Error: missing "Repair Order Number."`);
+    }
+    res.status(200).send("Success.");
+}
+
+function deleteRepairOrder(res, orderPayload) {
+    if (orderPayload.deleteWorkOrder == null || orderPayload.deleteWorkOrder == "") {
+        res.status(400).send(`Error: missing "Repair Order Number."`);
+    }
+    res.status(200).send("Success.");
+}
+
+function addJobRepairOrder(res, orderPayload) {
+    if (orderPayload.addJobWorkOrder == null || orderPayload.addJobWorkOrder == "") {
+        res.status(400).send(`Error: missing "Repair Order Number."`);
+    } if (orderPayload.addJobDuration == null || orderPayload.addJobDuration == "") {
+        res.status(400).send(`Error: missing "Duration"`);
+    } if (orderPayload.addJobJobDescription == null || orderPayload.addJobJobDescription == "") {
+        res.status(400).send(`Error: missing "Job Description"`);
+    }
+    res.status(200).send("Success.");
+}
+// How to Get Subpages from the Main Page (i.e. activating Navbar links)
 
 app.get('/', (req, res) => { // => http://localhost:8000/
     // The render method takes the name of the HTML
@@ -54,10 +89,28 @@ app.get('/about', (req, res) => { // => http://localhost:8000/
 //     res.end(JSON.stringify(response));  
 //  });  
 
-app.post('/add_repair_order', function (req, res) { 
-    console.log("Triggering: ", '/add_repair_order', req.body, req.query); 
+
+// Modal Functions
+
+app.post('/add_repair_order', function (req, res) {
+    console.log("Triggering: ", '/add_repair_order', req.body, req.query);
     addRepairOrder(res, req.body);
- });  
+});
+
+app.post('/edit_repair_order', function (req, res) {
+    console.log("Triggering: ", '/edit_repair_order', req.body, req.query);
+    editRepairOrder(res, req.body);
+});
+
+app.post('/delete_repair_order', function (req, res) {
+    console.log("Triggering: ", '/delete_repair_order', req.body, req.query);
+    deleteRepairOrder(res, req.body);
+});
+
+app.post('/add_job_repair_order', function (req, res) {
+    console.log("Triggering: ", '/add_job_repair_order', req.body, req.query);
+    addJobRepairOrder(res, req.body);
+});
 
 var server = app.listen(8000, function () { // server hosted in => http://localhost:8000
     console.log('listening to port 8000')

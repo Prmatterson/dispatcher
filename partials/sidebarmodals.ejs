@@ -44,12 +44,13 @@
                 <h5 class="modal-title">Edit Repair Order</h5>
             </header><br>
             <form class="modal-body" id="edit-ro" name="edit-ro">
-                <label for="work-order">Repair Order Number:</label><br>
-                <input type="text" id="work-order" name="work-order" value="">
+                <label for="edit-work-order">Repair Order Number:</label><br>
+                <input type="text" id="edit-work-order" name="edit-work-order" value="">
             </form><br><br>
             <footer class="modal-footer">
                 <!--Clicking this button will eventually activate a function to edit a Repair Order-->
-                <button class="btn btn-success" type="button" value="Submit">Submit</button>
+                <p id="edit-repair-order-modal-error" style="color:red;"></p>
+                <button class="btn btn-success" type="button" id="edit-repair-order-submit-button" value="Submit">Submit</button>
                 <button class="btn btn-secondary" type="button" value="Cancel" data-dismiss="modal">Cancel</button>
             </footer>
         </div>
@@ -64,12 +65,13 @@
                 <h5 class="modal-title">Delete Repair Order</h5>
             </header><br>
             <form class="modal-body" id="delete-ro" name="delete-ro">
-                <label for="work-order">Repair Order Number:</label><br>
-                <input type="text" id="work-order" name="work-order" value="">
+                <label for="delete-work-order">Repair Order Number:</label><br>
+                <input type="text" id="delete-work-order" name="delete-work-order" value="">
             </form><br><br>
             <footer class="modal-footer">
                 <!--Clicking this button will eventually activate a function to delete a Repair Order-->
-                <button class="btn btn-success" type="button" value="Submit">Submit</button>
+                <p id="delete-repair-order-modal-error" style="color:red;"></p>
+                 <button class="btn btn-success" type="button" id="delete-repair-order-submit-button" value="Submit">Submit</button>
                 <button class="btn btn-secondary" type="button" value="Cancel" data-dismiss="modal">Cancel</button>
             </footer>
         </div>
@@ -77,26 +79,27 @@
 </div>
 
 <!--Add Job to Repair Order Modal-->
-<div class="modal fade p-3 container col-4" id="add-job-modal" name="add-job-modal">
+<div class="modal fade p-3 container col-4" id="add-job-to-repair-order-modal" name="add-job-to-repair-order-modal">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <header class="modal-header">
                 <h5 class="modal-title">Add Job to Repair Order</h5>
             </header><br>
             <form class="modal-body" id="add-job" name="add-job">
-                <label for="work-order">Repair Order Number:</label><br>
-                <input type="text" id="work-order" name="work-order" value="">
+                <label for="add-job-to-work-order">Repair Order Number:</label><br>
+                <input type="text" id="add-job-to-work-order" name="add-job-to-work-order" value="">
                 <br>
-                <label for="duration">Duration (in tenths of an hour, e.g. 1.1 for 1 hour and 6
+                <label for="add-job-duration">Duration (in tenths of an hour, e.g. 1.1 for 1 hour and 6
                     minutes):</label><br>
-                <input type="text" id="duration" name="duration" value="">
+                <input type="text" id="add-job-duration" name="add-job-duration" value="">
                 <br>
-                <label for="job-description">Job Description (e.g. oil change, tire rotation)</label><br>
-                <input type="test" id="job-description" name="job-description" value="">
+                <label for="add-job-job-description">Job Description (e.g. oil change, tire rotation)</label><br>
+                <input type="test" id="add-job-job-description" name="add-job-job-description" value="">
             </form><br><br>
             <footer class="modal-footer">
                 <!--Clicking this button will eventually activate a function to add a job to a Repair Order-->
-                <button class="btn btn-success" type="button" value="Submit">Submit</button>
+                <p id="add-job-to-repair-order-modal-error" style="color:red;"></p>
+                <button class="btn btn-success" type="button" id="add-job-to-repair-order-submit-button" value="Submit">Submit</button>
                 <button class="btn btn-secondary" type="button" value="Cancel" data-dismiss="modal">Cancel</button>
             </footer>
         </div>
@@ -123,7 +126,8 @@
             </form><br><br>
             <footer class="modal-footer">
                 <!--Clicking this button will eventually activate a function to add work time to a Repair Order-->
-                <button class="btn btn-success" type="button" value="Submit">Submit</button>
+                <p id="add-time-to-repair-order-modal-error" style="color:red;"></p>
+                <button class="btn btn-success" type="button" id="add-time-to-repair-order-submit-button" value="Submit">Submit</button>
                 <button class="btn btn-secondary" type="button" value="Cancel" data-dismiss="modal">Cancel</button>
             </footer>
         </div>
@@ -147,7 +151,8 @@
             </form><br><br>
             <footer class="modal-footer">
                 <!--Clicking this button will eventually activate a function to change promise time of a Repair Order-->
-                <button class="btn btn-success" type="button" value="Submit">Submit</button>
+                <p id="change-promise-time-of-repair-order-modal-error" style="color:red;"></p>
+                <button class="btn btn-success" type="button" id="change-promise-time-of-repair-order-submit-button" value="Submit">Submit</button>
                 <button class="btn btn-secondary" type="button" value="Cancel" data-dismiss="modal">Cancel</button>
             </footer>
         </div>
