@@ -1,0 +1,56 @@
+/* Colour palette should be about quiet confidence, the shop may be chaotic, but you, the dispatcher, are calm, collected and getting it all done */
+a {
+    color: #0d462c;
+}
+
+p {
+    color: #0d462c;
+}
+
+button {
+    color: #0d462c;
+}
+
+.navbar {
+    background: #d4dfd5;
+}
+
+.footer {
+    background: #d4d9df;
+    color: #0d462c;
+    text-align: center;
+}
+
+.main-data {
+    background: #a4bca8
+}
+
+.sticky-offset {
+    top: 40px;
+}
+
+.btn-group-vertical {
+    max-width: 100%
+}
+
+.btn-wrap-text {
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    text-overflow: ellipsis;
+}
+
+#time-table {
+    background-color:#d4d9df;
+    text-align: center;
+    overflow-x: scroll;
+}
+
+#sidebar-btn {
+    background: #d4d9df;
+}
+
+#repair-order-info {
+    height: 1000px;
+    background: #d4d9df;
+}

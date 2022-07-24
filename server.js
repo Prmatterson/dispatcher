@@ -66,6 +66,27 @@ function addJobRepairOrder(res, orderPayload) {
     }
     res.status(200).send("Success.");
 }
+
+function addTimeToRepairOrder(res, orderPayload) {
+    if (orderPayload.addTimeToWorkOrder == null || orderPayload.addTimeToWorkOrder == "") {
+        res.status(400).send(`Error: missing "Repair Order Number."`);
+    } if (orderPayload.addTimeDuration == null || orderPayload.addTimeDuration == "") {
+        res.status(400).send(`Error: missing "Duration"`);
+    } if (orderPayload.addTimeRoNote == null || orderPayload.addTimeRoNote == "") {
+        res.status(400).send(`Error: missing "Note"`);
+    }
+    res.status(200).send("Success.");
+}
+
+function changeTimeOfRepairOrder(res, orderPayload) {
+    if (orderPayload.changeTimeWorkOrder == null || orderPayload.changeTimeWorkOrder == "") {
+        res.status(400).send(`Error: missing "Repair Order Number."`);
+    } if (orderPayload.changePromiseTime == null || orderPayload.changePromiseTime == "") {
+        res.status(400).send(`Error: missing "Promise Time"`);
+    }
+    res.status(200).send("Success.");
+}
+
 // How to Get Subpages from the Main Page (i.e. activating Navbar links)
 
 app.get('/', (req, res) => { // => http://localhost:8000/
@@ -110,6 +131,17 @@ app.post('/delete_repair_order', function (req, res) {
 app.post('/add_job_repair_order', function (req, res) {
     console.log("Triggering: ", '/add_job_repair_order', req.body, req.query);
     addJobRepairOrder(res, req.body);
+});
+
+app.post('/add_time_repair_order', function (req, res) {
+    console.log("Triggering: ", '/add_time_repair_order', req.body, req.query);
+    addTimeToRepairOrder(res, req.body);
+});
+
+
+app.post('/change_promise_time_repair_order', function (req, res) {
+    console.log("Triggering: ", '/change_promise_time_repair_order', req.body, req.query);
+    changeTimeOfRepairOrder(res, req.body);
 });
 
 var server = app.listen(8000, function () { // server hosted in => http://localhost:8000
