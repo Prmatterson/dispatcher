@@ -105,6 +105,38 @@ app.get('/about', (req, res) => { // => http://localhost:8000/
     res.render('about', { author: "Peter M.", pageTitle: "Dispatcher" });
 });
 
+app.get('/techschedule', (req, res) => { // => http://localhost:8000/
+    // The render method takes the name of the HTML
+    // page to be rendered as input
+    // This page should be in the views folder
+    // in the root directory.
+    res.render('techschedule', { author: "Peter M.", pageTitle: "Dispatcher" });
+});
+
+app.get('/settings', (req, res) => { // => http://localhost:8000/
+    // The render method takes the name of the HTML
+    // page to be rendered as input
+    // This page should be in the views folder
+    // in the root directory.
+    res.render('settings', { author: "Peter M.", pageTitle: "Dispatcher" });
+});
+
+app.get('/account', (req, res) => { // => http://localhost:8000/
+    // The render method takes the name of the HTML
+    // page to be rendered as input
+    // This page should be in the views folder
+    // in the root directory.
+    res.render('account', { author: "Peter M.", pageTitle: "Dispatcher" });
+});
+
+app.get('/logout', (req, res) => { // => http://localhost:8000/
+    // The render method takes the name of the HTML
+    // page to be rendered as input
+    // This page should be in the views folder
+    // in the root directory.
+    res.render('logout', { author: "Peter M.", pageTitle: "Dispatcher" });
+});
+
 // app.post('/add_repair_order', urlencodedParser, function (req, res) {  
 //     response = addRepairOrder(req.body);
 //     res.end(JSON.stringify(response));  
