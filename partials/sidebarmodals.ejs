@@ -107,22 +107,22 @@
 </div>
 
 <!--Add Time to Repair Order Modal-->
-<div class="modal fade p-3 container col-4" id="add-time-modal" name="add-time-modal">
+<div class="modal fade p-3 container col-4" id="add-time-to-repair-order-modal" name="add-time-to-repair-order-modal">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <header class="modal-header">
                 <h5 class="modal-title">Add Work Time to Repair Order</h5>
             </header><br>
             <form class="modal-body" id="add-time" name="add-time">
-                <label for="work-order">Repair Order Number:</label><br>
-                <input type="text" id="work-order" name="work-order" value="">
+                <label for="add-time-to-work-order">Repair Order Number:</label><br>
+                <input type="text" id="add-time-to-work-order" name="add-time-to-work-order" value="">
                 <br>
                 <label for="duration">Duration (in tenths of an hour, e.g. 1.1 for 1 hour and 6
                     minutes):</label><br>
-                <input type="text" id="duration" name="duration" value="">
+                <input type="text" id="add-time-duration" name="add-time-duration" value="">
                 <br>
                 <label for="ro-note">Notes (e.g. reason time added)</label><br>
-                <input type="test" id="ro-note" name="ro-note" value="">
+                <input type="test" id="add-time-ro-note" name="add-time-ro-note" value="">
             </form><br><br>
             <footer class="modal-footer">
                 <!--Clicking this button will eventually activate a function to add work time to a Repair Order-->
@@ -135,18 +135,18 @@
 </div>
 
 <!--Change Promise Time of Repair Order Modal-->
-<div class="modal fade p-3 container col-4" id="change-time-modal" name="change-time-modal">
+<div class="modal fade p-3 container col-4" id="change-promise-time-of-repair-order-modal" name="change-promise-time-of-repair-order-modal">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <header class="modal-header">
                 <h5 class="modal-title">Change Promise Time of Repair Order</h5>
             </header><br>
             <form class="modal-body" id="change-time" name="change-time">
-                <label for="work-order">Repair Order Number:</label><br>
-                <input type="text" id="work-order" name="work-order" value="">
+                <label for="change-promise-work-order">Repair Order Number:</label><br>
+                <input type="text" id="change-promise-work-order" name="change-promise-work-order" value="">
                 <br>
-                <label for="promise-time">New Promise Time (24-hour format, e.g. 1800 for 6:00pm):</label><br>
-                <input type="text" id="promise-time" name="promise-time" value="">
+                <label for="change-promise-time">New Promise Time (24-hour format, e.g. 1800 for 6:00pm):</label><br>
+                <input type="text" id="change-promise-time" name="change-promise-time" value="">
                 <br>
             </form><br><br>
             <footer class="modal-footer">
