@@ -5,6 +5,7 @@ $('#add-repair-order-modal').on('hidden.bs.modal', function (e) {
 
 $('#edit-repair-order-modal').on('hidden.bs.modal', function (e) {
     $(this).find('#edit-ro')[0].reset();
+    $("#edit-repair-order-modal-error").html('');
 });
 
 $('#delete-repair-order-modal').on('hidden.bs.modal', function (e) {
