@@ -94,7 +94,7 @@ app.get('/', (req, res) => { // => http://localhost:8000/
     // page to be rendered as input
     // This page should be in the views folder
     // in the root directory.
-    res.render('home', { author: "Peter M.", pageTitle: "Dispatcher", timeTable: data.timeTable, timeTableHeader: data.timeTableheader });
+    res.render('home', { author: "Peter M.", pageTitle: "Dispatcher", timeTableDict: data.timeTableDict, timeTableDictHeader: data.timeTableDictheader });
 });
 
 app.get('/about', (req, res) => { // => http://localhost:8000/
