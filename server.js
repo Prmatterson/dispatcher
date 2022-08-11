@@ -86,7 +86,6 @@ function changeTimeOfRepairOrder(res, orderPayload) {
     }
     res.status(200).send("Success.");
 }
-
 // How to Get Subpages from the Main Page (i.e. activating Navbar links)
 
 app.get('/', (req, res) => { // => http://localhost:8000/
@@ -169,7 +168,6 @@ app.post('/add_time_repair_order', function (req, res) {
     console.log("Triggering: ", '/add_time_repair_order', req.body, req.query);
     addTimeToRepairOrder(res, req.body);
 });
-
 
 app.post('/change_promise_time_repair_order', function (req, res) {
     console.log("Triggering: ", '/change_promise_time_repair_order', req.body, req.query);
