@@ -1,6 +1,3 @@
-const { append } = require("express/lib/response");
-const { timeTableDict } = require("../../data");
-
 // Functions to Clear Modal Form Fields on Modal Exit
 $('#add-repair-order-modal').on('hidden.bs.modal', function (e) {
     $(this).find('#add-ro')[0].reset();
@@ -216,8 +213,3 @@ $(document).ready(function () {
     });
 });
 
-$(document).ready(function () {
-    app.locals.createTimeTableDict = () => {
-        timeTableDict(0800; )
-    }
-})

@@ -22,21 +22,42 @@
                     data-target="#add-time-to-repair-order-modal">Add Work Time to Repair Order</button>
                 <!--Add Change Promise Time of Repair Order Button-->
                 <button class="btn btn-wrap-text rounded-bottom" type="button" id="sidebar-btn" data-toggle="modal"
-                    data-target="#change-promise-time-of-repair-order-modal">Change Promise Time of Repair Order</button>
+                    data-target="#change-promise-time-of-repair-order-modal">Change Promise Time of Repair
+                    Order</button>
                 <p></p>
                 <!--Below will be where information about the highlighted job in the table will appears-->
                 <div class="col-12" id="repair-order-info">
                     <p><br><br><br><br><br><br><br><br><br><br><br>Information Window for Current
                         Job<br><br><br><br><br><br><br><br><br><br><br><br></p>
                 </div>
-           <p></p>
+                <p></p>
             </div>
         </div>
         <!--Dispatch Table/Schedule-->
         <div class="col-10">
             <p></p>
             <table class="table table-striped-columns table-hover" id="time-table-dict">
-                
+                <tr>
+                    <% for (const headerColumnNameIndex in timeTableDictHeader) { %>
+                        <th>
+                            <%= timeTableDictHeader[headerColumnNameIndex] %>
+                        </th>
+                    <% } %>
+                </tr>
+               
+                <% for (const timeSlotKey in timeTableDict) { %>
+                    <tr>
+                        <td>
+                            <%= timeSlotKey %>
+                        </td>
+                        
+                        <% for (const techKey in timeTableDict[timeSlotKey]) { %>
+                            <td>
+                                <%= timeTableDict[timeSlotKey][techKey] %>
+                            </td>
+                            <% } %>
+                    </tr>
+                    <% } %>
             </table>
         </div>
     </div>
