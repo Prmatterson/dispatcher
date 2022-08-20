@@ -2,6 +2,7 @@ let techNumbers = ["Tech 1", "Tech 2", "Tech 3"]
 
 let timeTableDictHeader = ["Time", techNumbers[0], techNumbers[1], techNumbers[2]];
 
+// Function to Create Main Table Structure
 let timeTableDict = {}
 let initialHour = 8;
 let endHour = 16;
@@ -19,7 +20,7 @@ for (let i_h = initialHour; i_h <= endHour; i_h++) {
 // Function to Populate Menu Times for Duration in Modals
 console.log("From Data.js", timeTableDictHeader);
 
-let possibleTimesDict = {}
+let possibleTimesDict = []
 let lowestTime = 6;
 
 for (let i_t = lowestTime; i_t <= 480; i_t += 6) {
@@ -52,6 +53,6 @@ addROFunction = () => {
 module.exports = {
   "timeTableDictHeader": timeTableDictHeader,
   "timeTableDict": timeTableDict,
-  "possibleTimes": possibleTimes,
+  "possibleTimesDict": possibleTimesDict,
   "addROFunction": addROFunction,
 }
