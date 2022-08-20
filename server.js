@@ -39,6 +39,10 @@ function addRepairOrder(res, orderPayload) {
     } if (orderPayload.jobDescription == null || orderPayload.jobDescription == "") {
         res.status(400).send(`Error: missing "Job Description"`);
     }
+
+
+    data.timeTable["0800"]["tech1"] = "saohdausidhiud";
+
     res.status(200).send("Success.");
 }
 
@@ -86,7 +90,6 @@ function changeTimeOfRepairOrder(res, orderPayload) {
     }
     res.status(200).send("Success.");
 }
-
 // How to Get Subpages from the Main Page (i.e. activating Navbar links)
 
 app.get('/', (req, res) => { // => http://localhost:8000/
@@ -94,7 +97,8 @@ app.get('/', (req, res) => { // => http://localhost:8000/
     // page to be rendered as input
     // This page should be in the views folder
     // in the root directory.
-    res.render('home', { author: "Peter M.", pageTitle: "Dispatcher", timeTable: data.timeTable, timeTableHeader: data.timeTableheader });
+    console.log("From home.ejs", data.timeTableDictHeader);
+    res.render('home', { author: "Peter M.", pageTitle: "Dispatcher", timeTableDict: data.timeTableDict, timeTableDictHeader: data.timeTableDictHeader });
 });
 
 app.get('/about', (req, res) => { // => http://localhost:8000/

@@ -9,15 +9,30 @@
                 <label for="work-order">Repair Order Number:</label><br>
                 <input type="text" id="work-order" name="work-order" value="">
                 <br>
-                <label for="tech">Technician Number:</label><br>
-                <input type="text" id="tech" name="tech" value="">
-                <br>
-                <label for="promise-time">Promise Time (12 or 24 hour format (e.g. 6:00pm or 1800):</label><br>
-                <input type="text" id="promise-time" name="promise-time" value="">
-                <br>
+       
+                <label for="tech">Technician:</label><br>
+                <select id="tech" class="custom-select">
+                    <!-- Make this prettier -->
+                    <% for (const techKey in timeTableDict["0800"]) { %>
+                        <option value="<%= techKey %>">
+                            <%= techKey.charAt(0).toUpperCase() + techKey.substring(1, 4) +  " " + techKey.slice(4) %>
+                        </option>
+                        <% } %>
+                </select>
+ 
+                <label for="promise-time">Promise Time</label><br>
+                <select id="promise-time" class="custom-select">
+                    <% for (const timeSlotKey in timeTableDict) { %>
+                        <option value="<%= timeSlotKey %>">
+                            <%= timeSlotKey.substring(0, 2) + ":"  + timeSlotKey.substring(2, 4) %>
+                        </option>
+                        <% } %>
+                </select>
+         
                 <label for="duration">Duration (in tenths of an hour, e.g. 1.1 for 1 hour and 6
                     minutes):</label><br>
                 <input type="text" id="duration" name="duration" value="">
+               
                 <br>
                 <label for="job-description">Job Description (e.g. oil change, tire rotation)</label><br>
                 <input type="test" id="job-description" name="job-description" value="">
@@ -50,7 +65,8 @@
             <footer class="modal-footer">
                 <!--Clicking this button will eventually activate a function to edit a Repair Order-->
                 <p id="edit-repair-order-modal-error" style="color:red;"></p>
-                <button class="btn btn-success" type="button" id="edit-repair-order-submit-button" value="Submit">Submit</button>
+                <button class="btn btn-success" type="button" id="edit-repair-order-submit-button"
+                    value="Submit">Submit</button>
                 <button class="btn btn-secondary" type="button" value="Cancel" data-dismiss="modal">Cancel</button>
             </footer>
         </div>
@@ -71,7 +87,8 @@
             <footer class="modal-footer">
                 <!--Clicking this button will eventually activate a function to delete a Repair Order-->
                 <p id="delete-repair-order-modal-error" style="color:red;"></p>
-                 <button class="btn btn-success" type="button" id="delete-repair-order-submit-button" value="Submit">Submit</button>
+                <button class="btn btn-success" type="button" id="delete-repair-order-submit-button"
+                    value="Submit">Submit</button>
                 <button class="btn btn-secondary" type="button" value="Cancel" data-dismiss="modal">Cancel</button>
             </footer>
         </div>
@@ -99,7 +116,8 @@
             <footer class="modal-footer">
                 <!--Clicking this button will eventually activate a function to add a job to a Repair Order-->
                 <p id="add-job-to-repair-order-modal-error" style="color:red;"></p>
-                <button class="btn btn-success" type="button" id="add-job-to-repair-order-submit-button" value="Submit">Submit</button>
+                <button class="btn btn-success" type="button" id="add-job-to-repair-order-submit-button"
+                    value="Submit">Submit</button>
                 <button class="btn btn-secondary" type="button" value="Cancel" data-dismiss="modal">Cancel</button>
             </footer>
         </div>
@@ -127,7 +145,8 @@
             <footer class="modal-footer">
                 <!--Clicking this button will eventually activate a function to add work time to a Repair Order-->
                 <p id="add-time-to-repair-order-modal-error" style="color:red;"></p>
-                <button class="btn btn-success" type="button" id="add-time-to-repair-order-submit-button" value="Submit">Submit</button>
+                <button class="btn btn-success" type="button" id="add-time-to-repair-order-submit-button"
+                    value="Submit">Submit</button>
                 <button class="btn btn-secondary" type="button" value="Cancel" data-dismiss="modal">Cancel</button>
             </footer>
         </div>
@@ -135,7 +154,8 @@
 </div>
 
 <!--Change Promise Time of Repair Order Modal-->
-<div class="modal fade p-3 container col-4" id="change-promise-time-of-repair-order-modal" name="change-promise-time-of-repair-order-modal">
+<div class="modal fade p-3 container col-4" id="change-promise-time-of-repair-order-modal"
+    name="change-promise-time-of-repair-order-modal">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <header class="modal-header">
@@ -152,10 +172,10 @@
             <footer class="modal-footer">
                 <!--Clicking this button will eventually activate a function to change promise time of a Repair Order-->
                 <p id="change-promise-time-of-repair-order-modal-error" style="color:red;"></p>
-                <button class="btn btn-success" type="button" id="change-promise-time-of-repair-order-submit-button" value="Submit">Submit</button>
+                <button class="btn btn-success" type="button" id="change-promise-time-of-repair-order-submit-button"
+                    value="Submit">Submit</button>
                 <button class="btn btn-secondary" type="button" value="Cancel" data-dismiss="modal">Cancel</button>
             </footer>
         </div>
     </div>
 </div>
- 
