@@ -1,0 +1,35 @@
+<main class="container col-12 bg-light">
+    <div class="main-data row">
+        <div class="col-2" id="left-column">
+            <!--Sidebar-->
+            <div class="btn-group-vertical sticky-top sticky-offset" id="sidebar">
+                <p></p>
+                <!--Add Tech Button-->
+                <button class="btn rounded-top btn-wrap-text" type="button" id="sidebar-btn" data-toggle="modal"
+                    data-target="#add-tech-modal">Add Tech</button>
+                <p></p>
+            </div>
+        </div>
+
+        <!--Add Tech Button Modal-->
+        <div class="modal fade p-3 container col-4" id="add-tech-modal" name="add-tech-modal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <header class="modal-header">
+                        <h5 class="modal-title">Add Technician</h5>
+                    </header><br>
+                    <form class="modal-body">
+                        <label for="add-tech">Technician Number:</label><br>
+                        <input type="text" id="add-tech" name="add-tech" value="">
+                    </form><br><br>
+                    <footer class="modal-footer">
+                        <!--Clicking this button will eventually activate a function to edit a Repair Order-->
+                        <p id="add-tech-modal-error" style="color:red;"></p>
+                        <button class="btn btn-success" type="button" id="add-tech-submit-button"
+                            value="Submit">Submit</button>
+                        <button class="btn btn-secondary" type="button" value="Cancel"
+                            data-dismiss="modal">Cancel</button>
+                    </footer>
+                </div>
+            </div>
+        </div>

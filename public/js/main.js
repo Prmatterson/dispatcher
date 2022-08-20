@@ -29,6 +29,12 @@ $('#change-promise-time-of-repair-order-modal').on('hidden.bs.modal', function (
     $("#change-promise-time-of-repair-order-modal-error").html('');
 });
 
+$('#add-tech-modal').on('hidden.bs.modal', function (e) {
+    $(this).find('#add-tech')[0].reset();
+    $("#add-tech-modal-error").html('');
+});
+
+
 //  Modal Submit Buttons Functions
 $(document).ready(function () {
     $("#add-repair-order-submit-button").click(function () {
@@ -213,6 +219,36 @@ $(document).ready(function () {
                 let errorMessage = xhr.status + ': ' + xhr.responseText
                 console.log(errorMessage);
                 $("#change-promise-time-of-repair-order-modal-error").html(errorMessage);
+            }
+        });
+    });
+});
+
+$(document).ready(function () {
+    $("#add-tech-submit-button").click(function () {
+        console.log("Submitting  #add-tech-submit-button");
+        addTech = $("#add-tech").val();
+        $.ajax({
+            type: 'POST',
+            url: '/add-tech',
+            data: {
+                addTech: addTech,
+            },
+            dataType: 'json',
+            success: function (data) {
+                console.log("Success!: ", data);
+                techNumbers.push('test');
+                timeTableDictHeader.push('test')
+                $('#add-tech-modal').modal('hide');
+            },
+            error: function (xhr, status, error) {
+                // There's been an error, do something with it!
+                // Only use status and errorThrown.
+                // Chances are request will not have anything in it.
+                console.log("Error objects: ", xhr, status, error);
+                let errorMessage = xhr.status + ': ' + xhr.responseText
+                console.log(errorMessage);
+                $("#add-tech-modal-error").html(errorMessage);
             }
         });
     });

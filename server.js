@@ -90,6 +90,13 @@ function changeTimeOfRepairOrder(res, orderPayload) {
     }
     res.status(200).send("Success.");
 }
+
+function addTech(res, orderPayload) {
+    if (orderPayload.addTech == null || orderPayload.addTech == "") {
+        res.status(400).send(`Error: missing "Tech Number."`);
+    } 
+    res.status(200).send("Success.");
+}
 // How to Get Subpages from the Main Page (i.e. activating Navbar links)
 
 app.get('/', (req, res) => { // => http://localhost:8000/
@@ -177,6 +184,11 @@ app.post('/add_time_repair_order', function (req, res) {
 app.post('/change_promise_time_repair_order', function (req, res) {
     console.log("Triggering: ", '/change_promise_time_repair_order', req.body, req.query);
     changeTimeOfRepairOrder(res, req.body);
+});
+
+app.post('/add-tech', function (req, res) {
+    console.log("Triggering: ", '/add-tech', req.body, req.query);
+    addTech(res, req.body);
 });
 
 var server = app.listen(8000, function () { // server hosted in => http://localhost:8000
