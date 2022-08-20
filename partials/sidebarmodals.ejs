@@ -9,8 +9,8 @@
                 <label for="work-order">Repair Order Number:</label><br>
                 <input type="text" id="work-order" name="work-order" value="">
                 <br>
-       
                 <label for="tech">Technician:</label><br>
+
                 <select id="tech" class="custom-select">
                     <!-- Make this prettier -->
                     <% for (const techKey in timeTableDict["0800"]) { %>
@@ -19,7 +19,7 @@
                         </option>
                         <% } %>
                 </select>
- 
+
                 <label for="promise-time">Promise Time</label><br>
                 <select id="promise-time" class="custom-select">
                     <% for (const timeSlotKey in timeTableDict) { %>
@@ -28,15 +28,16 @@
                         </option>
                         <% } %>
                 </select>
-         
+
                 <label for="duration">Duration (in tenths of an hour, e.g. 1.1 for 1 hour and 6
                     minutes):</label><br>
                 <input type="text" id="duration" name="duration" value="">
-               
                 <br>
+
                 <label for="job-description">Job Description (e.g. oil change, tire rotation)</label><br>
                 <input type="test" id="job-description" name="job-description" value="">
                 <br>
+                
                 <label for="ro-note">Notes (e.g. special requests)</label><br>
                 <input type="test" id="ro-note" name="ro-note" value="">
             </form><br><br>
