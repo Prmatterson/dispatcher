@@ -14,12 +14,6 @@ for (let i_h = initialHour; i_h <= endHour; i_h++) {
     } 
 } 
 console.log("From Data.js", timeTableDictHeader);
-// Homework
-// 1. Commit this change
-// 2. Create another branch
-// 3. In this branch you are going to change from timeTable to timeTableDict
-// 4. pass timeTableDict from the server to the frontend
-// 5. Fix the EJS template to use dictionary/object/map using key value pairs instead of arrays
 
 module.exports = {
     "timeTableDictHeader": timeTableDictHeader,
