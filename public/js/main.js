@@ -59,6 +59,7 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (data) {
                 console.log("Success!: ", data);
+                addROFunction();
                 $('#add-repair-order-modal').modal('hide');
             },
             error: function (xhr, status, error) {
@@ -212,9 +213,6 @@ $(document).ready(function () {
                 $('#change-promise-time-of-repair-order-modal').modal('hide');
             },
             error: function (xhr, status, error) {
-                // There's been an error, do something with it!
-                // Only use status and errorThrown.
-                // Chances are request will not have anything in it.
                 console.log("Error objects: ", xhr, status, error);
                 let errorMessage = xhr.status + ': ' + xhr.responseText
                 console.log(errorMessage);
@@ -238,13 +236,10 @@ $(document).ready(function () {
             success: function (data) {
                 console.log("Success!: ", data);
                 techNumbers.push('test');
-                timeTableDictHeader.push('test')
+                timeTableDictHeader.push('test');
                 $('#add-tech-modal').modal('hide');
             },
             error: function (xhr, status, error) {
-                // There's been an error, do something with it!
-                // Only use status and errorThrown.
-                // Chances are request will not have anything in it.
                 console.log("Error objects: ", xhr, status, error);
                 let errorMessage = xhr.status + ': ' + xhr.responseText
                 console.log(errorMessage);

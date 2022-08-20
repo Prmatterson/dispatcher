@@ -17,11 +17,19 @@ for (let i_h = initialHour; i_h <= endHour; i_h++) {
 } 
 console.log("From Data.js", timeTableDictHeader);
 
-module.exports = {
-    "timeTableDictHeader": timeTableDictHeader,
-    "timeTableDict": timeTableDict,
-}
-
 
 //EXAMPLE EDIT DATA
 //timeTable["0800"]["tech1"] = "saohdausidhiud"
+
+let addROFunction = (tech, promise, duration) => {
+  let tech = document.write(document.getElementById("tech").value);
+  let promise = document.write(document.getElementById("pronmise-time").value);
+  let duration = document.write(document.getElementById("duration").value);
+
+}
+
+module.exports = {
+  "timeTableDictHeader": timeTableDictHeader,
+  "timeTableDict": timeTableDict,
+  addROFunction,
+}
