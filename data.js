@@ -24,7 +24,7 @@ let possibleTimesDict = []
 let lowestTime = 6;
 
 for (let i_t = lowestTime; i_t <= 480; i_t += 6) {
-  possibleTimesDict.push(i_t);
+  possibleTimesDict.push(i_t); // possibleTimesDict.put(i_t)?
 };
 
 //EXAMPLE EDIT DATA
