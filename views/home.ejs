@@ -17,7 +17,7 @@
     <main>
         <%- include('../partials/navbar.ejs') %>
             <%- include('../partials/maindata.ejs', { timeTableDict: timeTableDict, timeTableDictHeader: timeTableDictHeader }) %>
-                <%- include('../partials/sidebarmodals.ejs', { timeTableDict: timeTableDict }) %>
+                <%- include('../partials/sidebarmodals.ejs', { timeTableDict: timeTableDict, possibleDurations: possibleDurations }) %>
     </main>
     <%- include('../partials/footer.ejs') %>
 

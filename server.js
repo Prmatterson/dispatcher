@@ -30,20 +30,18 @@ function addRepairOrder(res, orderPayload) {
     // By using urlencodedParser, the payload inside req is already a JSON object easier to read as follows req.body.whatever_field_you_are_passing
     if (orderPayload.workOrder == null || orderPayload.workOrder == "") {
         res.status(400).send(`Error: missing "Repair Order Number".`);
-    } if (orderPayload.tech == null || orderPayload.tech == "") {
+    } else if (orderPayload.tech == null || orderPayload.tech == "") {
         res.status(400).send(`Error: missing "Technnician Number".`);
-    } if (orderPayload.promiseTime == null || orderPayload.promiseTime == "") {
+    } else if (orderPayload.promiseTime == null || orderPayload.promiseTime == "") {
         res.status(400).send(`Error: missing "Promise Time"`);
-    } if (orderPayload.duration == null || orderPayload.duration == "") {
+    } else if (orderPayload.duration == null || orderPayload.duration == "") {
         res.status(400).send(`Error: missing "Duration"`);
-    } if (orderPayload.jobDescription == null || orderPayload.jobDescription == "") {
+    } else if (orderPayload.jobDescription == null || orderPayload.jobDescription == "") {
         res.status(400).send(`Error: missing "Job Description"`);
+    } else{
+        data.addROFunction(orderPayload);
+        res.status(200).send(data.timeTableDict);
     }
-
-
-    data.timeTable["0800"]["tech1"] = "saohdausidhiud";
-
-    res.status(200).send("Success.");
 }
 
 function editRepairOrder(res, orderPayload) {
@@ -105,7 +103,13 @@ app.get('/', (req, res) => { // => http://localhost:8000/
     // This page should be in the views folder
     // in the root directory.
     console.log("From home.ejs", data.timeTableDictHeader);
-    res.render('home', { author: "Peter M.", pageTitle: "Dispatcher", timeTableDict: data.timeTableDict, timeTableDictHeader: data.timeTableDictHeader });
+    res.render(
+        'home', { 
+            author: "Peter M.", 
+            pageTitle: "Dispatcher", 
+            timeTableDict: data.timeTableDict,
+            timeTableDictHeader: data.timeTableDictHeader, 
+            possibleDurations: data.possibleDurations });
 });
 
 app.get('/about', (req, res) => { // => http://localhost:8000/

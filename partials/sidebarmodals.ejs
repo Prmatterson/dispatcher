@@ -32,9 +32,11 @@
                 <label for="duration">Duration (in tenths of an hour, e.g. 1.1 for 1 hour and 6
                     minutes):</label><br>
                 <select id="duration" class-="custom-select">
-                    <option value="">
-                        <!-- Get possibleTimesDict values in this list-->
+                    <% for (const durationKey in possibleDurations) { %>
+                    <option value="<%= durationKey %>">
+                       <%= possibleDurations[durationKey] %>
                     </option>
+                    <% } %>
                     </select>
                 <br>
 

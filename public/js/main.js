@@ -59,8 +59,8 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (data) {
                 console.log("Success!: ", data);
-                addROFunction();
-                $('#add-repair-order-modal').modal('hide');
+                // $('#add-repair-order-modal').modal('hide');
+                location.reload(); 
             },
             error: function (xhr, status, error) {
                 // There's been an error, do something with it!
