@@ -52,7 +52,7 @@ addROFunction = (orderPayload) => {
   timeTableDict[orderPayload.promiseTime][orderPayload.tech] = orderPayload.jobDescription;
   
   for(let i_t = orderPayload.duration; i_t >= 0; i_t -= .1){
-    
+    // put in reverse loop to select multiple rows within column
   }
 
   console.log(`Successfully added an RO!`)
