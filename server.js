@@ -30,20 +30,18 @@ function addRepairOrder(res, orderPayload) {
     // By using urlencodedParser, the payload inside req is already a JSON object easier to read as follows req.body.whatever_field_you_are_passing
     if (orderPayload.workOrder == null || orderPayload.workOrder == "") {
         res.status(400).send(`Error: missing "Repair Order Number".`);
-    } if (orderPayload.tech == null || orderPayload.tech == "") {
+    } else if (orderPayload.tech == null || orderPayload.tech == "") {
         res.status(400).send(`Error: missing "Technnician Number".`);
-    } if (orderPayload.promiseTime == null || orderPayload.promiseTime == "") {
+    } else if (orderPayload.promiseTime == null || orderPayload.promiseTime == "") {
         res.status(400).send(`Error: missing "Promise Time"`);
-    } if (orderPayload.duration == null || orderPayload.duration == "") {
+    } else if (orderPayload.duration == null || orderPayload.duration == "") {
         res.status(400).send(`Error: missing "Duration"`);
-    } if (orderPayload.jobDescription == null || orderPayload.jobDescription == "") {
+    } else if (orderPayload.jobDescription == null || orderPayload.jobDescription == "") {
         res.status(400).send(`Error: missing "Job Description"`);
+    } else{
+        data.addROFunction(orderPayload);
+        res.status(200).send(data.timeTableDict);
     }
-
-
-    data.timeTable["0800"]["tech1"] = "saohdausidhiud";
-
-    res.status(200).send("Success.");
 }
 
 function editRepairOrder(res, orderPayload) {
@@ -90,6 +88,13 @@ function changeTimeOfRepairOrder(res, orderPayload) {
     }
     res.status(200).send("Success.");
 }
+
+function addTech(res, orderPayload) {
+    if (orderPayload.addTech == null || orderPayload.addTech == "") {
+        res.status(400).send(`Error: missing "Tech Number."`);
+    } 
+    res.status(200).send("Success.");
+}
 // How to Get Subpages from the Main Page (i.e. activating Navbar links)
 
 app.get('/', (req, res) => { // => http://localhost:8000/
@@ -98,7 +103,13 @@ app.get('/', (req, res) => { // => http://localhost:8000/
     // This page should be in the views folder
     // in the root directory.
     console.log("From home.ejs", data.timeTableDictHeader);
-    res.render('home', { author: "Peter M.", pageTitle: "Dispatcher", timeTableDict: data.timeTableDict, timeTableDictHeader: data.timeTableDictHeader });
+    res.render(
+        'home', { 
+            author: "Peter M.", 
+            pageTitle: "Dispatcher", 
+            timeTableDict: data.timeTableDict,
+            timeTableDictHeader: data.timeTableDictHeader, 
+            possibleDurations: data.possibleDurations });
 });
 
 app.get('/about', (req, res) => { // => http://localhost:8000/
@@ -177,6 +188,11 @@ app.post('/add_time_repair_order', function (req, res) {
 app.post('/change_promise_time_repair_order', function (req, res) {
     console.log("Triggering: ", '/change_promise_time_repair_order', req.body, req.query);
     changeTimeOfRepairOrder(res, req.body);
+});
+
+app.post('/add-tech', function (req, res) {
+    console.log("Triggering: ", '/add-tech', req.body, req.query);
+    addTech(res, req.body);
 });
 
 var server = app.listen(8000, function () { // server hosted in => http://localhost:8000
