@@ -1,9 +1,10 @@
+var data = require('./data.js');
+
 // Set express as Node.js web application
 // server framework.
 // To install express before using it as
 // an application server by using
 // "npm install express" command.
-var data = require('./data.js');
 var express = require('express');
 var cors = require('cors');
 var path = require('path');
@@ -11,19 +12,21 @@ var path = require('path');
 // var bodyParser = require('body-parser');  
 // Create application/x-www-form-urlencoded parser  
 // var urlencodedParser = bodyParser.urlencoded({ extended: false })  
-
 var bodyParser = require("body-parser");
 var app = express();
+
+
 app.use(bodyParser.json()); //USE JSON payloads by default
 app.use(bodyParser.urlencoded({ extended: false }));
-
 app.use(cors());
 app.use(express.static('public')); //e.g localhost:8000/css/main.css
 // app.use('/static', express.static(path.join(__dirname, 'public'))); // e.g localhost:8000/static/css/main.css
-// Set EJS as templating engine
 
+
+// Set EJS as templating engine
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
 
 // Defining Functions for Catching Errors in Modals or Submitting when Succesful 
 function addRepairOrder(res, orderPayload) {
