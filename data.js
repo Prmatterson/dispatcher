@@ -34,8 +34,6 @@ for (let i_h = initialHour; i_h <= endHour; i_h++) {
 };
 
 // Function to Populate Menu Times for Duration in Modals
-console.log("From Data.js", timeTableDictHeader);
-
 let possibleDurations = []
 let lowestTime = .1
 let highestTime = 8.0
@@ -45,8 +43,6 @@ for (let i_t = lowestTime; i_t <= highestTime; i_t += .1) {
 };
 possibleDurations.sort();
 
-//EXAMPLE EDIT DATA
-//timeTable["0800"]["tech1"] = "saohdausidhiud"
 
 // Function to Add RO when hitting submit button in Add Repair Order Modal
 addROFunction = (orderPayload) => {
