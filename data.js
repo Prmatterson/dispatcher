@@ -23,7 +23,7 @@ for (let i_h = initialHour; i_h <= endHour; i_h++) {
     timeSlotKey = hourFormat + minFormat;
 
     timeTableDict[timeSlotKey] = {}
-    
+
     for (let i_tech = 0; i_tech < techNumbers.length; i_tech++) {
       let techID = techIdGenerator(techNumbers[i_tech]);
       timeTableDict[timeSlotKey][techID] = "-";
@@ -50,9 +50,10 @@ possibleDurations.sort();
 addROFunction = (orderPayload) => {
   // data.timeTable["0800"]["tech1"] = "saohdausidhiud";
   timeTableDict[orderPayload.promiseTime][orderPayload.tech] = orderPayload.jobDescription;
-  
-  for(let i_t = orderPayload.duration; i_t >= 0; i_t -= .1){
-    // put in reverse loop to select multiple rows within column
+
+  for (let i_t = orderPayload.duration; i_t >= 0; i_t -= .1) {
+    // write orderPayload.jobDescription in number of cells above the prommiseTime cell equal to the duration
+    
   }
 
   console.log(`Successfully added an RO!`)
