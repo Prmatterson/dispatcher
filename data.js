@@ -47,10 +47,10 @@ possibleDurations.sort();
 // Function to Add RO when hitting submit button in Add Repair Order Modal
 addROFunction = (orderPayload) => {
   for (let i_d = orderPayload.duration; i_d >= 0; i_d -= .1) {
+    $("#promise-time").val() = $("#promise-time").val() - 6; // makes referenceError: $ is not defined
     // write orderPayload.jobDescription in number of cells above the prommiseTime cell equal to the duration
-    timeTableDict[orderPayload.promiseTime - (i_d * 60)][orderPayload.tech] = orderPayload.jobDescription;
+    timeTableDict[orderPayload.promiseTime][orderPayload.tech] = orderPayload.jobDescription;
   }
-
   console.log(`Successfully added an RO!`)
  }; 
 
