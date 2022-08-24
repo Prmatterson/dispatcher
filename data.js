@@ -38,7 +38,9 @@ console.log("From Data.js", timeTableDictHeader);
 
 let possibleDurations = []
 let lowestTime = .1
-for (let i_t = lowestTime; i_t <= 8.0; i_t += .1) {
+let highestTime = 8.0
+
+for (let i_t = lowestTime; i_t <= highestTime; i_t += .1) {
   possibleDurations.push(Number.parseFloat(i_t).toFixed(1)); // possibleTimesDict.put(i_t)?
 };
 possibleDurations.sort();
@@ -48,21 +50,18 @@ possibleDurations.sort();
 
 // Function to Add RO when hitting submit button in Add Repair Order Modal
 addROFunction = (orderPayload) => {
-  // data.timeTable["0800"]["tech1"] = "saohdausidhiud";
-  timeTableDict[orderPayload.promiseTime][orderPayload.tech] = orderPayload.jobDescription;
-
-  for (let i_t = orderPayload.duration; i_t >= 0; i_t -= .1) {
+  for (let i_d = orderPayload.duration; i_d >= 0; i_d -= .1) {
     // write orderPayload.jobDescription in number of cells above the prommiseTime cell equal to the duration
-    
+    timeTableDict[orderPayload.promiseTime - (i_d * 60)][orderPayload.tech] = orderPayload.jobDescription;
   }
 
   console.log(`Successfully added an RO!`)
-}
+ }; 
+
 
 module.exports = {
   "timeTableDictHeader": timeTableDictHeader,
   "timeTableDict": timeTableDict,
   "addROFunction": addROFunction,
   "possibleDurations": possibleDurations,
-  "addROFunction": addROFunction,
 }
