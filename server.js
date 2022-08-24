@@ -25,7 +25,7 @@ app.use(express.static('public')); //e.g localhost:8000/css/main.css
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// Defining Functions for Catching Errors in Modals
+// Defining Functions for Catching Errors in Modals or Submitting when Succesful 
 function addRepairOrder(res, orderPayload) {
     // By using urlencodedParser, the payload inside req is already a JSON object easier to read as follows req.body.whatever_field_you_are_passing
     if (orderPayload.workOrder == null || orderPayload.workOrder == "") {
