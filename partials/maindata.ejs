@@ -37,16 +37,24 @@
         <div class="col-10">
             <p></p>
             <table class="table table-striped-columns table-hover" id="time-table-dict">
+                <thead>
                 <tr>
+                    <th>
+                        INDEX
+                    </th>
                     <% for (const headerColumnNameIndex in timeTableDictHeader) { %>
                         <th>
                             <%= timeTableDictHeader[headerColumnNameIndex] %>
                         </th>
                     <% } %>
                 </tr>
-               
+                </thead>
+                <tbody>
                 <% for (const timeSlotKey in timeTableDict) { %>
                     <tr>
+                        <td>
+                            <%= (Number(timeSlotKey.substring(0, 2)) * 60) +  Number(timeSlotKey.substring(2, 4)) %>
+                        </td>
                         <td>
                             <%= timeSlotKey %>
                         </td>
@@ -58,6 +66,7 @@
                             <% } %>
                     </tr>
                     <% } %>
+                </tbody>
             </table>
         </div>
     </div>

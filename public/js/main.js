@@ -37,6 +37,10 @@ $('#add-tech-modal').on('hidden.bs.modal', function (e) {
 
 //  Modal Submit Buttons Functions
 $(document).ready(function () {
+
+    let tableToBeSorted = $('#time-table-dict').dataTable({'iDisplayLength': -1});
+    // tableToBeSorted.fnSort( [ [0,'desc'] ] );
+
     $("#add-repair-order-submit-button").click(function () {
         console.log("Submitting  #add-repair-order-submit-button");
         workOrder = $("#work-order").val();

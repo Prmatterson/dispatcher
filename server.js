@@ -1,9 +1,10 @@
+var data = require('./data.js');
+
 // Set express as Node.js web application
 // server framework.
 // To install express before using it as
 // an application server by using
 // "npm install express" command.
-var data = require('./data.js');
 var express = require('express');
 var cors = require('cors');
 var path = require('path');
@@ -11,21 +12,23 @@ var path = require('path');
 // var bodyParser = require('body-parser');  
 // Create application/x-www-form-urlencoded parser  
 // var urlencodedParser = bodyParser.urlencoded({ extended: false })  
-
 var bodyParser = require("body-parser");
 var app = express();
+
+
 app.use(bodyParser.json()); //USE JSON payloads by default
 app.use(bodyParser.urlencoded({ extended: false }));
-
 app.use(cors());
 app.use(express.static('public')); //e.g localhost:8000/css/main.css
 // app.use('/static', express.static(path.join(__dirname, 'public'))); // e.g localhost:8000/static/css/main.css
-// Set EJS as templating engine
 
+
+// Set EJS as templating engine
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// Defining Functions for Catching Errors in Modals
+
+// Defining Functions for Catching Errors in Modals or Submitting when Succesful 
 function addRepairOrder(res, orderPayload) {
     // By using urlencodedParser, the payload inside req is already a JSON object easier to read as follows req.body.whatever_field_you_are_passing
     if (orderPayload.workOrder == null || orderPayload.workOrder == "") {
@@ -38,7 +41,7 @@ function addRepairOrder(res, orderPayload) {
         res.status(400).send(`Error: missing "Duration"`);
     } else if (orderPayload.jobDescription == null || orderPayload.jobDescription == "") {
         res.status(400).send(`Error: missing "Job Description"`);
-    } else{
+    } else {
         data.addROFunction(orderPayload);
         res.status(200).send(data.timeTableDict);
     }
@@ -92,7 +95,7 @@ function changeTimeOfRepairOrder(res, orderPayload) {
 function addTech(res, orderPayload) {
     if (orderPayload.addTech == null || orderPayload.addTech == "") {
         res.status(400).send(`Error: missing "Tech Number."`);
-    } 
+    }
     res.status(200).send("Success.");
 }
 // How to Get Subpages from the Main Page (i.e. activating Navbar links)
@@ -104,12 +107,13 @@ app.get('/', (req, res) => { // => http://localhost:8000/
     // in the root directory.
     console.log("From home.ejs", data.timeTableDictHeader);
     res.render(
-        'home', { 
-            author: "Peter M.", 
-            pageTitle: "Dispatcher", 
-            timeTableDict: data.timeTableDict,
-            timeTableDictHeader: data.timeTableDictHeader, 
-            possibleDurations: data.possibleDurations });
+        'home', {
+        author: "Peter M.",
+        pageTitle: "Dispatcher",
+        timeTableDict: data.timeTableDict,
+        timeTableDictHeader: data.timeTableDictHeader,
+        possibleDurations: data.possibleDurations
+    });
 });
 
 app.get('/about', (req, res) => { // => http://localhost:8000/
