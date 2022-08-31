@@ -36,21 +36,6 @@ node server.js
 
 Cancel the server - click terminal and press Ctrl + C
 
-
-
-# Tasks 
-
-1. Read more about:
-    1. EJS xxx
-    2. NPM xxx
-    3. NODEJS xxx
-    4. WEBPACK xxx
-    5. Command line xxx
-2. Translate all html to EJS Partials
-
-Bonus (Follow example to create table dynamically)
-https://www.geeksforgeeks.org/use-ejs-as-template-engine-in-node-js/
-
 Reference Form using Post
 <form action="http://127.0.0.1:8000/process_post" method="POST">  
 First Name: <input type="text" name="first_name">  <br>  
