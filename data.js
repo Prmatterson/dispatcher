@@ -76,7 +76,7 @@ addROFunction = (orderPayload) => {
       break;
     }
 
-    let newTimeSlotKey =  hourFormatGenerator(newHours, newMinutes);
+    let newTimeSlotKey = hourFormatGenerator(newHours, newMinutes);
     console.log("newHours", newHours, "newMinutes", newMinutes, "NewTimeSlotKey", newTimeSlotKey, newHours, newMinutes);
     // write orderPayload.jobDescription in number of cells above the prommiseTime cell equal to the duration
     timeTableDict[newTimeSlotKey][orderPayload.tech] = orderPayload.jobDescription;
