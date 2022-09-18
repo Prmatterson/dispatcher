@@ -98,8 +98,8 @@ function addTech(res, orderPayload) {
     }
     res.status(200).send("Success.");
 }
-// How to Get Subpages from the Main Page (i.e. activating Navbar links)
 
+// How to Get Subpages from the Main Page (i.e. activating Navbar links)
 app.get('/', (req, res) => { // => http://localhost:8000/
     // The render method takes the name of the HTML
     // page to be rendered as input
