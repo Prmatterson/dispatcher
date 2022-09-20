@@ -100,7 +100,7 @@ function addTech(res, orderPayload) {
 
 // How to Get Subpages from the Main Page (i.e. activating Navbar links)
 
-app.get('/home', (req, res) => { // => http://localhost:8000/
+app.get('/', (req, res) => { // => http://localhost:8000/
     // The render method takes the name of the HTML
     // page to be rendered as input
     // This page should be in the views folder
