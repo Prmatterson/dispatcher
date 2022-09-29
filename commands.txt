@@ -42,3 +42,31 @@ First Name: <input type="text" name="first_name">  <br>
 Last Name: <input type="text" name="last_name">  
 <input type="submit" value="Submit">  
 </form>  
+
+
+Setup Firebase functions
+
+firebase init functions
+
+On firebase functions, modify the package.json to include firebase configuration + old configuration
+Reinstall everything
+
+cd functions/
+npm install
+npm install -g firebase-tools 
+
+Install java
+brew install java
+echo 'export PATH="/usr/local/opt/openjdk/bin:$PATH"' >> ~/.profile
+source  ~/.profile
+java --version
+
+Go back to home directory & Start local demo server
+
+cd ..
+pwd
+firebase emulators:start
+
+Deploy to the cloud
+
+firebase deploy --only functions

@@ -1,3 +1,13 @@
+const functions = require("firebase-functions");
+
+// // Create and Deploy Your First Cloud Functions
+// // https://firebase.google.com/docs/functions/write-firebase-functions
+//
+// exports.helloWorld = functions.https.onRequest((request, response) => {
+//   functions.logger.info("Hello logs!", {structuredData: true});
+//   response.send("Hello from Firebase!");
+// });
+
 var data = require('./data.js');
 
 // Set express as Node.js web application
@@ -25,30 +35,6 @@ app.use(express.static('public')); //e.g localhost:8000/css/main.css
 // Set EJS as templating engine
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs');
-
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyBXHZj3gG171HIpzXj-IFP-gBS2TQv1GYw",
-  authDomain: "dispatcher-707d6.firebaseapp.com",
-  databaseURL: "https://dispatcher-707d6-default-rtdb.firebaseio.com",
-  projectId: "dispatcher-707d6",
-  storageBucket: "dispatcher-707d6.appspot.com",
-  messagingSenderId: "1064643580644",
-  appId: "1:1064643580644:web:91442a37f1489d459d52f1",
-  measurementId: "G-Q51NQ9YFY1"
-};
-
-// Initialize Firebase
-const fireBaseApp = initializeApp(firebaseConfig);
-const analytics = getAnalytics(fireBaseApp);
-
 
 // Defining Functions for Catching Errors in Modals or Submitting when Succesful 
 function addRepairOrder(res, orderPayload) {
@@ -122,6 +108,14 @@ function addTech(res, orderPayload) {
 }
 
 // How to Get Subpages from the Main Page (i.e. activating Navbar links)
+
+app.get('/test', (req, res) => { // => http://localhost:8000/
+    // The render method takes the name of the HTML
+    // page to be rendered as input
+    // This page should be in the views folder
+    // in the root directory.
+    res.json({"test": "test"});
+});
 
 app.get('/', (req, res) => { // => http://localhost:8000/
     // The render method takes the name of the HTML
@@ -222,6 +216,8 @@ app.post('/add-tech', function (req, res) {
     addTech(res, req.body);
 });
 
-var server = app.listen(8000, function () { // server hosted in => http://localhost:8000
-    console.log('listening to port 8000')
-});
+// var server = app.listen(8000, function () { // server hosted in => http://localhost:8000
+//     console.log('listening to port 8000')
+// });
+
+exports.app = functions.https.onRequest(app);
