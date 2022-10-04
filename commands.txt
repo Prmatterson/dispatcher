@@ -3,8 +3,8 @@ https://www.codecademy.com/learn/getting-started-off-platform-for-data-science/m
 
 clear - Empty the command line
 pwd - show the current path
-cd - go to a specific folder, e.g. cd /Users/petermatterson/Desktop/Get Coding/Dispatcher
-ls - list # files in a folder, e.g. ls /Users/petermatterson/Desktop/Get Coding/Dispatcher
+cd - go to a specific folder, e.g. cd /Users/petermatterson/Desktop/"Get Coding"/Dispatcher
+ls - list # files in a folder, e.g. ls /Users/petermatterson/Desktop/"Get Coding"/Dispatcher
 cd ./ - going to the current folder (relative paths)
 cd ../ - going to the parent folder (relative paths)
 
