@@ -57,8 +57,8 @@ npm install -g firebase-tools
 
 Install java
 brew install java
-echo 'export PATH="/usr/local/opt/openjdk/bin:$PATH"' >> ~/.profile
-source  ~/.profile
+echo 'export PATH="/usr/local/opt/openjdk/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
 java --version
 
 Go back to home directory & Start local demo server

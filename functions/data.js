@@ -1,57 +1,57 @@
-let techNumbers = ["Tech 1", "Tech 2", "Tech 3"]
+const techNumbers = ["Tech 1", "Tech 2", "Tech 3"];
 
-let timeTableDictHeader = ["Time"];
+const timeTableDictHeader = ["Time"];
 
 for (let i_tech = 0; i_tech < techNumbers.length; i_tech++) {
   timeTableDictHeader.push(techNumbers[i_tech]);
-};
+}
 
 // Function to Create Main Table Structure
-let timeTableDict = {}
-let initialHour = 8;
-let endHour = 16;
+const timeTableDict = {};
+const initialHour = 8;
+const endHour = 16;
 
-let techIdGenerator = (oldTechName) => {
-  let techID = oldTechName.toLowerCase().replace(/\s+/g, '');
+const techIdGenerator = (oldTechName) => {
+  const techID = oldTechName.toLowerCase().replace(/\s+/g, "");
   return techID;
 };
 
-function hourFormatGenerator(hour, minutes){
+function hourFormatGenerator(hour, minutes) {
   hourFormat = (hour < 10) ? `0${hour}` : `${hour}`;
   minFormat = (minutes < 10) ? `0${minutes}` : `${minutes}`;
   timeSlotKey = hourFormat + minFormat;
   return timeSlotKey;
 }
 
-function reversedHourFormatGenerator(timeSlotKey){
-  let hours = Number(timeSlotKey.substring(0, 2));
-  let minutes = Number(timeSlotKey.substring(2, 4));
-  return {"hours": hours, "minutes": minutes}
+function reversedHourFormatGenerator(timeSlotKey) {
+  const hours = Number(timeSlotKey.substring(0, 2));
+  const minutes = Number(timeSlotKey.substring(2, 4));
+  return {"hours": hours, "minutes": minutes};
 }
 
 for (let i_h = initialHour; i_h <= endHour; i_h++) {
   for (let i_m = 0; i_m < 60; i_m += 6) {
     timeSlotKey = hourFormatGenerator(i_h, i_m);
 
-    timeTableDict[timeSlotKey] = {}
+    timeTableDict[timeSlotKey] = {};
 
     for (let i_tech = 0; i_tech < techNumbers.length; i_tech++) {
-      let techID = techIdGenerator(techNumbers[i_tech]);
+      const techID = techIdGenerator(techNumbers[i_tech]);
       timeTableDict[timeSlotKey][techID] = "-";
-    };
+    }
 
     // timeTableDict[timeSlotKey] = { "tech1": "-", "tech2": "-", "tech3": "-" }
-  };
-};
+  }
+}
 
 // Function to Populate Menu Times for Duration in Modals
-let possibleDurations = []
-let lowestTime = .1
-let highestTime = 8.0
+const possibleDurations = [];
+const lowestTime = .1;
+const highestTime = 8.0;
 
 for (let i_t = lowestTime; i_t <= highestTime; i_t += .1) {
   possibleDurations.push(Number.parseFloat(i_t).toFixed(1)); // possibleTimesDict.put(i_t)?
-};
+}
 possibleDurations.sort();
 
 
@@ -62,27 +62,27 @@ addROFunction = (orderPayload) => {
 
   for (let i_d = 0; i_d < orderPayload.duration; i_d += .1) {
     console.log("Going back from promised time by ", i_d);
-    let timeObj = reversedHourFormatGenerator(orderPayload.promiseTime);
-    let hours = timeObj["hours"];
-    let minutes = timeObj["minutes"];
-    let totalPromisetimeInMinutes = (hours * 60) + minutes;
-    let stepBeforePromiseTimeInMinutes = totalPromisetimeInMinutes - (i_d * 60); 
-    console.log("hours", hours, "minutes", minutes, "totalPromisetimeInMinutes",  totalPromisetimeInMinutes, "stepBeforePromiseTimeInMinutes", stepBeforePromiseTimeInMinutes);
+    const timeObj = reversedHourFormatGenerator(orderPayload.promiseTime);
+    const hours = timeObj["hours"];
+    const minutes = timeObj["minutes"];
+    const totalPromisetimeInMinutes = (hours * 60) + minutes;
+    const stepBeforePromiseTimeInMinutes = totalPromisetimeInMinutes - (i_d * 60);
+    console.log("hours", hours, "minutes", minutes, "totalPromisetimeInMinutes", totalPromisetimeInMinutes, "stepBeforePromiseTimeInMinutes", stepBeforePromiseTimeInMinutes);
 
-    let newHours = Math.floor(stepBeforePromiseTimeInMinutes/60);
-    let newMinutes = Math.round(stepBeforePromiseTimeInMinutes - (newHours * 60));
+    const newHours = Math.floor(stepBeforePromiseTimeInMinutes / 60);
+    const newMinutes = Math.round(stepBeforePromiseTimeInMinutes - (newHours * 60));
 
-    if(newHours < 8){
+    if (newHours < 8) {
       break;
     }
 
-    let newTimeSlotKey = hourFormatGenerator(newHours, newMinutes);
+    const newTimeSlotKey = hourFormatGenerator(newHours, newMinutes);
     console.log("newHours", newHours, "newMinutes", newMinutes, "NewTimeSlotKey", newTimeSlotKey, newHours, newMinutes);
     // write orderPayload.jobDescription in number of cells above the prommiseTime cell equal to the duration
     timeTableDict[newTimeSlotKey][orderPayload.tech] = orderPayload.jobDescription;
   }
-  console.log(`Successfully added an RO!`)
- }; 
+  console.log("Successfully added an RO!");
+};
 
 
 module.exports = {
@@ -90,4 +90,4 @@ module.exports = {
   "timeTableDict": timeTableDict,
   "addROFunction": addROFunction,
   "possibleDurations": possibleDurations,
-}
+};
