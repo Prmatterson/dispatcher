@@ -114,7 +114,6 @@ app.get("/", (req, res) => { // => http://localhost:8000/
   // page to be rendered as input
   // This page should be in the views folder
   // in the root directory.
-  console.log("From home.ejs", data.timeTableDictHeader);
   res.render(
       "home", {
         author: "Peter M.",
@@ -124,8 +123,7 @@ app.get("/", (req, res) => { // => http://localhost:8000/
         possibleDurations: data.possibleDurations,
       });
 });
-
-app.get("/about", (req, res) => { // => http://localhost:8000/
+app.get("/functions/views/about", (req, res) => { // => http://localhost:8000/
   // The render method takes the name of the HTML
   // page to be rendered as input
   // This page should be in the views folder
@@ -133,7 +131,7 @@ app.get("/about", (req, res) => { // => http://localhost:8000/
   res.render("about", {author: "Peter M.", pageTitle: "Dispatcher"});
 });
 
-app.get("/techschedule", (req, res) => { // => http://localhost:8000/
+app.get("/functions/views/techschedule", (req, res) => { // => http://localhost:8000/
   // The render method takes the name of the HTML
   // page to be rendered as input
   // This page should be in the views folder
@@ -141,7 +139,7 @@ app.get("/techschedule", (req, res) => { // => http://localhost:8000/
   res.render("techschedule", {author: "Peter M.", pageTitle: "Dispatcher"});
 });
 
-app.get("/settings", (req, res) => { // => http://localhost:8000/
+app.get("/functions/views/settings", (req, res) => { // => http://localhost:8000/
   // The render method takes the name of the HTML
   // page to be rendered as input
   // This page should be in the views folder
@@ -149,7 +147,7 @@ app.get("/settings", (req, res) => { // => http://localhost:8000/
   res.render("settings", {author: "Peter M.", pageTitle: "Dispatcher"});
 });
 
-app.get("/account", (req, res) => { // => http://localhost:8000/
+app.get("/functions/views/account", (req, res) => { // => http://localhost:8000/
   // The render method takes the name of the HTML
   // page to be rendered as input
   // This page should be in the views folder
@@ -157,7 +155,7 @@ app.get("/account", (req, res) => { // => http://localhost:8000/
   res.render("account", {author: "Peter M.", pageTitle: "Dispatcher"});
 });
 
-app.get("/logout", (req, res) => { // => http://localhost:8000/
+app.get("/functions/views/logout", (req, res) => { // => http://localhost:8000/
   // The render method takes the name of the HTML
   // page to be rendered as input
   // This page should be in the views folder
