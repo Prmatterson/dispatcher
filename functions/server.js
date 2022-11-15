@@ -29,7 +29,7 @@ const app = express();
 app.use(bodyParser.json()); // USE JSON payloads by default
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cors());
-app.use(express.static("public")); // e.g localhost:8000/css/main.css
+// app.use(express.static("public")); // e.g localhost:8000/css/main.css # Not working on firebase
 // app.use('/static', express.static(path.join(__dirname, 'public'))); // e.g localhost:8000/static/css/main.css
 
 // Set EJS as templating engine

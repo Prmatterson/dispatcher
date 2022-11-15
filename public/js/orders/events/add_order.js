@@ -9,7 +9,7 @@ function AddRepairOrderOnClickEventSetup(params) {
         roNote = $("#ro-note").val();
         $.ajax({
             type: "POST",
-            url: "./add_repair_order",
+            url: "add_repair_order",
             data: {
                 workOrder: workOrder,
                 tech: tech,

@@ -11,7 +11,7 @@ $(document).ready(function() {
     editWorkOrder = $("#edit-work-order").val();
     $.ajax({
       type: "POST",
-      url: "./edit_repair_order",
+      url: "edit_repair_order",
       data: {
         editWorkOrder: editWorkOrder,
       },
@@ -37,7 +37,7 @@ $(document).ready(function() {
     deleteWorkOrder = $("#delete-work-order").val();
     $.ajax({
       type: "POST",
-      url: "./delete_repair_order",
+      url: "delete_repair_order",
       data: {
         deleteWorkOrder: deleteWorkOrder,
       },
@@ -65,7 +65,7 @@ $(document).ready(function() {
     addJobJobDescription = $("#add-job-job-description").val();
     $.ajax({
       type: "POST",
-      url: "./add_job_repair_order",
+      url: "add_job_repair_order",
       data: {
         addJobWorkOrder: addJobWorkOrder,
         addJobDuration: addJobDuration,
@@ -95,7 +95,7 @@ $(document).ready(function() {
     addTimeRoNote = $("#add-time-ro-note").val();
     $.ajax({
       type: "POST",
-      url: "./add_time_repair_order",
+      url: "add_time_repair_order",
       data: {
         addTimeToWorkOrder: addTimeToWorkOrder,
         addTimeDuration: addTimeDuration,
@@ -124,7 +124,7 @@ $(document).ready(function() {
     changePromiseTime = $("#change-promise-time").val();
     $.ajax({
       type: "POST",
-      url: "./change_promise_time_repair_order",
+      url: "change_promise_time_repair_order",
       data: {
         changeTimeWorkOrder: changeTimeWorkOrder,
         changePromiseTime: changePromiseTime,
@@ -148,7 +148,7 @@ $(document).ready(function() {
     addTech = $("#add-tech").val();
     $.ajax({
       type: "POST",
-      url: "./add-tech",
+      url: "add-tech",
       data: {
         addTech: addTech,
       },
