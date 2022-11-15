@@ -15,7 +15,7 @@
                     <!-- Make this prettier -->
                     <% for (const techKey in timeTableDict["0800"]) { %>
                         <option value="<%= techKey %>">
-                            <%= techKey.charAt(0).toUpperCase() + techKey.substring(1, 4) +  " " + techKey.slice(4) %>
+                            <%= techKey.charAt(0).toUpperCase() + techKey.substring(1, 4) + " " + techKey.slice(4) %>
                         </option>
                         <% } %>
                 </select>
@@ -24,7 +24,7 @@
                 <select id="promise-time" class="custom-select">
                     <% for (const timeSlotKey in timeTableDict) { %>
                         <option value="<%= timeSlotKey %>">
-                            <%= timeSlotKey.substring(0, 2) + ":"  + timeSlotKey.substring(2, 4) %>
+                            <%= timeSlotKey.substring(0, 2) + ":" + timeSlotKey.substring(2, 4) %>
                         </option>
                         <% } %>
                 </select>
@@ -33,17 +33,17 @@
                     minutes):</label><br>
                 <select id="duration" class-="custom-select">
                     <% for (const durationKey in possibleDurations) { %>
-                    <option value="<%= durationKey %>">
-                       <%= possibleDurations[durationKey] %>
-                    </option>
-                    <% } %>
-                    </select>
+                        <option value="<%= durationKey %>">
+                            <%= possibleDurations[durationKey] %>
+                        </option>
+                        <% } %>
+                </select>
                 <br>
 
                 <label for="job-description">Job Description (e.g. oil change, tire rotation)</label><br>
                 <input type="test" id="job-description" name="job-description" value="">
                 <br>
-                
+
                 <label for="ro-note">Notes (e.g. special requests)</label><br>
                 <input type="test" id="ro-note" name="ro-note" value="">
             </form><br><br>

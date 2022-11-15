@@ -5,12 +5,6 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ],
-    "rewrites": [ 
-      {
-        "source": "**",
-        "function": "dispatcher" 
-      }
     ]
   },
   "database": {
@@ -23,6 +17,9 @@
       "firebase-debug.log",
       "firebase-debug.*.log"
     ],
-    "source": "functions"
+    "source": "functions",
+    "predeploy": [
+      "npm --prefix \"$RESOURCE_DIR\" run lint"
+    ]
   }
 }

@@ -3,8 +3,8 @@ https://www.codecademy.com/learn/getting-started-off-platform-for-data-science/m
 
 clear - Empty the command line
 pwd - show the current path
-cd - go to a specific folder, e.g. cd /Users/petermatterson/Desktop/Get Coding/Dispatcher
-ls - list # files in a folder, e.g. ls /Users/petermatterson/Desktop/Get Coding/Dispatcher
+cd - go to a specific folder, e.g. cd /Users/petermatterson/Desktop/"Get Coding"/Dispatcher
+ls - list # files in a folder, e.g. ls /Users/petermatterson/Desktop/"Get Coding"/Dispatcher
 cd ./ - going to the current folder (relative paths)
 cd ../ - going to the parent folder (relative paths)
 
@@ -42,3 +42,31 @@ First Name: <input type="text" name="first_name">  <br>
 Last Name: <input type="text" name="last_name">  
 <input type="submit" value="Submit">  
 </form>  
+
+
+Setup Firebase functions
+
+firebase init functions
+
+On firebase functions, modify the package.json to include firebase configuration + old configuration
+Reinstall everything
+
+cd functions/
+npm install
+npm install -g firebase-tools 
+
+Install java
+brew install java
+echo 'export PATH="/usr/local/opt/openjdk/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+java --version
+
+Go back to home directory & Start local demo server
+
+cd ..
+pwd
+firebase emulators:start
+
+Deploy to the cloud
+
+firebase deploy --only functions
